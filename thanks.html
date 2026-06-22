@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+応募ありがとうございました｜Gemaris
+
+</title>
+
+<meta name="description"
+content="Gemaris応募完了ページ">
+
+<link rel="stylesheet"
+href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+HEADER
+========================= -->
+<header class="header">
+    <div class="container header-inner">
+        <a href="index.html">
+            <img src="images/image(24).png" alt="Gemaris" class="logo">
+        </a>
+
+        <!-- ハンバーガーボタン -->
+        <button class="hamburger" id="js-hamburger">
+            <span></span><span></span><span></span>
+        </button>
+
+        <!-- ナビゲーション本体 -->
+        <nav class="nav-menu" id="js-nav-menu">
+            <a href="#about">Gemarisとは</a>
+            <a href="#support">サポート</a>
+            <a href="#plans">契約プラン</a>
+            <a href="#faq">FAQ</a>
+            <a href="company.html">企業概要</a>
+            <a href="recruit.html">ライバー募集</a>
+            <a href="staff.html">スタッフ紹介</a>
+            <a href="apply.html" class="apply-btn">応募する</a>
+        </nav>
+    </div>
+</header>
+
+<section class="page-hero section">
+
+<div class="container">
+
+<div class="thanks-wrapper">
+
+<div>
+
+<img
+src="images/iris-main.png"
+alt="イリス"
+class="thanks-iris">
+
+</div>
+
+<div class="thanks-content">
+
+<span class="thanks-badge">
+
+THANK YOU
+
+</span>
+
+<h1>
+
+応募ありがとう！
+
+</h1>
+
+<p>
+
+Gemarisへのご応募を
+受け付けました。
+
+</p>
+
+<p>
+
+内容を確認後、
+担当スタッフより
+ご連絡いたします。
+
+</p>
+
+<p>
+
+今しばらく
+お待ちください。
+
+</p>
+
+<div class="thanks-buttons">
+
+<a
+href="index.html"
+class="button btn-red">
+
+TOPへ戻る
+
+</a>
+
+<a
+href="https://discord.gg/xxxxx"
+target="_blank"
+class="button btn-discord">
+
+Discordへ
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="next-step">
+
+<h2>
+
+今後の流れ
+
+</h2>
+
+<div class="step-grid">
+
+<div class="step-card">
+
+<div class="step-no">
+
+01
+
+</div>
+
+<h3>
+
+応募受付
+
+</h3>
+
+<p>
+
+応募内容を確認します。
+
+</p>
+
+</div>
+
+<div class="step-card">
+
+<div class="step-no">
+
+02
+
+</div>
+
+<h3>
+
+担当者連絡
+
+</h3>
+
+<p>
+
+メールまたはDiscordで
+ご連絡します。
+
+</p>
+
+</div>
+<div class="step-card">
+
+<div class="step-no">
+
+03
+
+</div>
+
+<h3>
+
+面談・相談
+
+</h3>
+
+<p>
+
+活動方針や目標について
+お話しします。
+
+</p>
+
+</div>
+
+<div class="step-card">
+
+<div class="step-no">
+
+04
+
+</div>
+
+<h3>
+
+活動スタート
+
+</h3>
+
+<p>
+
+いよいよライバー活動開始！
+Gemarisがサポートします。
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="cta-box">
+
+<h2>
+
+あなたの中の原石を、
+最高の輝きへ。
+
+</h2>
+
+<p>
+
+Gemarisは、
+あなたの挑戦を応援しています。
+
+</p>
+
+<a
+href="index.html"
+class="button btn-red">
+
+TOPページへ
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="container footer-inner">
+
+<div>
+
+<img
+src="images/logo.png"
+alt="Gemaris"
+class="logo">
+
+</div>
+
+<div class="footer-links">
+
+<a href="recruit.html">
+
+所属ライバー募集
+
+</a>
+
+<a href="staff.html">
+
+スタッフ紹介
+
+</a>
+
+<a href="company.html">
+
+企業概要
+
+</a>
+
+<a href="privacy.html">
+
+プライバシーポリシー
+
+</a>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="footer-bottom">
+
+© Gemaris LLC. All rights reserved.
+
+</div>
+
+</div>
+
+</footer>
+<script>
+    const hamburger = document.getElementById('js-hamburger');
+    const navMenu = document.getElementById('js-nav-menu');
+
+    // ハンバーガーボタンのクリックイベント
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('is-active');
+    });
+
+    // 💡 別のページから「戻る」で戻ってきたときに状態を完全リセットする魔法の処理
+    window.addEventListener('pageshow', (event) => {
+        // キャッシュから読み込まれた場合（戻るボタンなど）でも強制リセット
+        if (navMenu) {
+            navMenu.classList.remove('is-active');
+        }
+    });
+
+    // リンクをクリックしてメニューが閉じないバグもついでに予防（念のため）
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('is-active');
+        });
+    });
+</script>
+</body>
+
+</html>

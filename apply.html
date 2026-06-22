@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>応募フォーム｜Gemaris</title>
+
+<meta name="description"
+content="Gemaris所属ライバー応募フォーム">
+
+<link rel="stylesheet"
+href="css/style.css">
+
+<!-- 💡 スマホで絶対に崩さないためのマジックCSS（既存のcss/index.cssやstyle.cssに追記してもOKやで！） -->
+<style>
+  .apply-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column; /* 💡 ラベルと入力を確実に縦並びにする */
+    align-items: flex-start;
+  }
+  .form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2b2b2b;
+    font-size: 0.95rem;
+  }
+  /* 💡 入力要素をスマホ画面幅いっぱいに綺麗に広げる */
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group select,
+  .form-group textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fff;
+  }
+  .form-group select {
+    cursor: pointer;
+    height: auto;
+  }
+  /* 送信ボタンの横幅も100%にして押しやすく */
+  .full-btn {
+    width: 100% !important;
+    padding: 16px !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    border-radius: 6px !important;
+    cursor: pointer;
+  }
+</style>
+
+</head>
+
+<body>
+<!-- =========================
+HEADER
+========================= -->
+<header class="header">
+    <div class="container header-inner">
+        <a href="index.html">
+            <img src="images/image(24).png" alt="Gemaris" class="logo">
+        </a>
+
+        <!-- ハンバーガーボタン -->
+        <button class="hamburger" id="js-hamburger">
+            <span></span><span></span><span></span>
+        </button>
+
+        <!-- ナビゲーション本体 -->
+        <nav class="nav-menu" id="js-nav-menu">
+            <a href="#about">Gemarisとは</a>
+            <a href="#support">サポート</a>
+            <a href="#plans">契約プラン</a>
+            <a href="#faq">FAQ</a>
+            <a href="company.html">企業概要</a>
+            <a href="recruit.html">ライバー募集</a>
+            <a href="staff.html">スタッフ紹介</a>
+            <a href="apply.html" class="apply-btn">応募する</a>
+        </nav>
+    </div>
+</header>
+<section class="page-hero section">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>APPLY</span>
+
+<h2>
+
+Gemaris 応募フォーム
+
+</h2>
+
+</div>
+
+<p style="text-align:center; max-width:700px; margin:0 auto; line-height: 1.6; padding: 0 15px;">
+
+Gemarisに興味を持っていただき<br class="sp-only">ありがとうございます。<br>
+下記フォームよりご応募ください。<br>
+確認後、担当者よりご連絡いたします。
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<form
+action="thanks.html"
+method="post"
+class="apply-form">
+
+<!-- 👑【新規追加】希望職種のプルダウン項目 -->
+<div class="form-group">
+<label>
+希望職種 <span style="color: #9c2a2a; font-size: 0.8rem; margin-left: 5px;">[必須]</span>
+</label>
+<select
+name="job_type"
+required>
+<option value="">
+選択してください
+</option>
+<option value="ライバー">ライバー</option>
+<option value="マネージャー">マネージャー</option>
+<option value="スカウト">スカウト</option>
+</select>
+</div>
+
+<div class="form-group">
+
+<label>
+
+お名前
+
+</label>
+
+<input
+type="text"
+name="name"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+ふりがな
+
+</label>
+
+<input
+type="text"
+name="kana">
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+年齢
+
+</label>
+
+<select
+name="age"
+required>
+
+<option value="">
+
+選択してください
+
+</option>
+
+<option>18歳未満</option>
+<option>18〜22歳</option>
+<option>23〜29歳</option>
+<option>30〜39歳</option>
+<option>40歳以上</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+性別
+
+</label>
+
+<select name="gender">
+
+<option value="">
+
+選択してください
+
+</option>
+
+<option>女性</option>
+<option>男性</option>
+<option>その他</option>
+<option>回答しない</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+メールアドレス
+
+</label>
+
+<input
+type="email"
+name="email"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+Discord ID
+
+</label>
+
+<input
+type="text"
+name="discord">
+
+</div>
+<div class="form-group">
+
+<label>
+
+配信経験
+
+</label>
+
+<select
+name="experience"
+required>
+
+<option value="">
+
+選択してください
+
+</option>
+
+<option>
+
+未経験
+
+</option>
+
+<option>
+
+少しだけある
+
+</option>
+
+<option>
+
+現在活動中
+
+</option>
+
+<option>
+
+過去に活動していた
+
+</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+使用予定アプリ
+
+</label>
+
+<select
+name="platform">
+
+<option value="">
+
+選択してください
+
+</option>
+
+<option>Pococha</option>
+<option>Palmu</option>
+<option>ふわっち</option>
+<option>ColorSing</option>
+<option>未定</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+応募理由
+
+</label>
+
+<textarea
+name="reason"
+rows="6"
+required></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+現在利用しているSNS
+（任意）
+
+</label>
+
+<textarea
+name="sns"
+rows="4"></textarea>
+
+</div>
+
+<div class="form-group">
+
+<label>
+
+自由記入欄
+
+</label>
+
+<textarea
+name="message"
+rows="6"></textarea>
+
+</div>
+
+<button
+type="submit"
+class="button btn-red full-btn">
+
+応募する
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="contact-discord" style="text-align: center; max-width: 600px; margin: 0 auto; padding: 20px 15px;">
+
+<h2>
+
+応募前の相談も歓迎です
+
+</h2>
+
+<p>
+
+応募するか迷っている方も、<br class="sp-only">まずはお気軽にご相談ください。
+
+</p>
+
+<a
+href="https://discord.gg/xxxxx"
+target="_blank"
+class="button btn-discord" style="display: inline-block; margin-top: 15px;">
+
+Discordで相談する
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div class="container footer-inner">
+
+<div>
+
+<img
+src="images/logo.png"
+alt="Gemaris"
+class="logo">
+
+</div>
+
+<div class="footer-links">
+
+<a href="recruit.html">
+
+所属ライバー募集
+
+</a>
+
+<a href="company.html">
+
+企業概要
+
+</a>
+
+<a href="privacy.html">
+
+プライバシーポリシー
+
+</a>
+
+<a href="contact.html">
+
+お問い合わせ
+
+</a>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<div class="footer-bottom">
+
+© Gemaris LLC. All rights reserved.
+
+</div>
+
+</div>
+
+</footer>
+<script>
+    const hamburger = document.getElementById('js-hamburger');
+    const navMenu = document.getElementById('js-nav-menu');
+
+    // ハンバーガーボタンのクリックイベント
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('is-active');
+    });
+
+    // 💡 別のページから「戻る」で戻ってきたときに状態を完全リセットする魔法の処理
+    window.addEventListener('pageshow', (event) => {
+        // キャッシュから読み込まれた場合（戻るボタンなど）でも強制リセット
+        if (navMenu) {
+            navMenu.classList.remove('is-active');
+        }
+    });
+
+    // リンクをクリックしてメニューが閉じないバグもついでに予防（念のため）
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('is-active');
+        });
+    });
+</script>
+</body>
+
+</html>

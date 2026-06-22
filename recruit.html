@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ライバー募集（WANTED）｜Gemaris</title>
+  <meta name="description" content="Gemaris（ジェマリス）のライバー募集要項。特別なスキルや経験は不要です。あなたの「やってみたい」を最高の輝きに変える場所で、一緒に一歩を踏み出してみませんか？">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/recruit.css">
+</head>
+<body class="gemaris-theme">
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html">
+      <img src="images/image(24).png" alt="Gemaris" class="logo">
+    </a>
+
+    <button class="hamburger" id="js-hamburger">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-menu" id="js-nav-menu">
+      <a href="index.html#about">Gemarisとは</a>
+      <a href="support.html">サポート</a>
+      <a href="plan.html">契約プラン</a>
+      <a href="faq.html">FAQ</a>
+      <a href="recruit.html" class="active">ライバー募集</a>
+      <a href="staff.html">スタッフ紹介</a>
+      <a href="apply.html" class="apply-btn">応募する</a>
+    </nav>
+  </div>
+</header>
+
+<div class="recruit-page-wrapper">
+  <div class="container-recruit">
+
+    <section class="section-message">
+      <h2>あなたの「やってみたい」を、<br>最高の輝きに変える場所。</h2>
+      <div class="main-text">
+        <p>配信を始めるのって、実はすごく勇気がいること。</p>
+        <p>「機材の繋ぎ方がわからない」「パッと目を引くサムネイルってどう作るの？」「最初のリスナーさんと上手く話せるかな」そんな不安があって当然です。</p>
+        <p>Gemarisは、ただプラットフォームを紹介するだけの事務所ではありません。</p>
+        <p>配信環境のセッティングから、目を引く素材の用意、活動を続けるなかでの小さなお悩み相談まで、まるで部活の先輩やチームメイトのように、すぐ横に並んで一緒に考える「育成型」の事務所です。</p>
+        <p>特別なスキルや経験はいりません。あなたの「挑戦してみたい」という小さな原石を、私たちと一緒にじっくり磨いていきませんか？</p>
+      </div>
+    </section>
+
+    <section class="recruit-image-section">
+      <div class="recruit-char-container">
+        <img src="images/recruit.png" alt="Gemaris ライバー募集 WANTED（募集要項・応募条件詳細）" class="recruit-char-img" usemap="#recruit-map" id="js-recruit-img">
+        
+        <map name="recruit-map">
+          <area shape="rect" coords="145,2170,980,2330" href="apply.html" alt="募集要項・詳細を見る" class="map-link">
+        </map>
+      </div>
+    </section>
+
+    <section class="section-characters">
+      
+      <div class="char-box">
+        <div class="balloon kaicho-balloon">
+          ちょっと待って！<br>
+          まだ不安がある人も大丈夫！<br>
+          機材の準備から僕たちが<br>
+          しっかりサポートします！
+        </div>
+        <img src="images/kaichotarai.png" alt="かいちょ" class="char-img">
+      </div>
+
+      <div class="char-box">
+        <div class="balloon risa-balloon">
+          配信って最初は<br>
+          ちょっと不安だよね…<br>
+          でも大丈夫！<br>
+          私と一緒に、楽しみながら<br>
+          一歩を踏み出そう！
+        </div>
+        <img src="images/risalive.png" alt="看板娘Risa" class="char-img">
+      </div>
+
+    </section>
+
+    <section class="recruit-note-section">
+      <p class="recruit-note">
+        ※募集条件に関して「年齢制限に当てはまるか不安」「他アプリでの経験はどう扱われる？」など、気になる点があれば面談時にお気軽にご質問ください。
+      </p>
+    </section>
+
+    <section class="section-buttons">
+      <a href="apply.html" class="btn btn-red">今すぐライバー応募</a>
+      <a href="https://discord.gg/xxxxx" class="btn btn-discord" target="_blank">Discordで相談する</a>
+    </section>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">
+      <img src="images/image(24).png" alt="Gemaris">
+    </div>
+    <div class="footer-links">
+      <a href="index.html#about">Gemarisとは</a>
+      <a href="support.html">サポート</a>
+      <a href="plan.html">契約プラン</a>
+      <a href="faq.html">FAQ</a>
+      <a href="staff.html">スタッフ</a>
+      <a href="recruit.html">募集要項</a>
+      <a href="apply.html">応募</a>
+    </div>
+    <p>Gemaris合同会社</p>
+    <p>〒790-0942 愛媛県松山市古川北3-9-8</p>
+    <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // 1. ハンバーガーメニュー制御
+  const hamburger = document.getElementById('js-hamburger');
+  const navMenu = document.getElementById('js-nav-menu');
+
+  hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('is-active');
+      hamburger.classList.toggle('is-active');
+  });
+
+  window.addEventListener('pageshow', () => {
+      if (navMenu) navMenu.classList.remove('is-active');
+      if (hamburger) hamburger.classList.remove('is-active');
+  });
+
+  // 2. 🌟 イメージマップの座標を画面サイズに合わせて自動計算する最強の処理 🌟
+  const img = document.getElementById('js-recruit-img');
+  const area = document.querySelector('map[name="recruit-map"] area');
+  
+  // 元の画像サイズ（固定値）
+  const originalWidth = 1125;
+  const originalHeight = 2436;
+  // 元のボタン座標「左上X, 左上Y, 右下X, 右下Y」
+  const originalCoords = [145, 2170, 980, 2330];
+
+  function resizeMap() {
+      // 現在画面に表示されている画像の実際の幅と高さを取得
+      const currentWidth = img.clientWidth;
+      const currentHeight = img.clientHeight;
+
+      // 比率を計算
+      const ratioX = currentWidth / originalWidth;
+      const ratioY = currentHeight / originalHeight;
+
+      // 新しい座標を計算して適用や！
+      const newCoords = [
+          Math.round(originalCoords[0] * ratioX),
+          Math.round(originalCoords[1] * ratioY),
+          Math.round(originalCoords[2] * ratioX),
+          Math.round(originalCoords[3] * ratioY)
+      ];
+
+      area.setAttribute('coords', newCoords.join(','));
+  }
+
+  // 画像の読み込み完了時、および画面リサイズ時に実行
+  window.addEventListener('load', resizeMap);
+  window.addEventListener('resize', resizeMap);
+  // スクリプトが走った瞬間にも一発叩く
+  if (img.complete) {
+      resizeMap();
+  }
+</script>
+</body>
+</html>

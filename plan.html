@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>契約プラン｜Gemaris</title>
+  <meta name="description" content="Gemaris（ジェマリス）のライバー契約プラン。報酬還元率100%のセルフプロ契約と、機材貸与や経費補助が充実したフルサポート契約の2種類から選べます。">
+  <!-- 共通スタイル -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- 契約プランページ専用スタイル -->
+  <link rel="stylesheet" href="css/plan.css">
+</head>
+<body class="gemaris-theme">
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html">
+      <img src="images/image(24).png" alt="Gemaris" class="logo">
+    </a>
+
+    <button class="hamburger" id="js-hamburger">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-menu" id="js-nav-menu">
+      <a href="index.html#about">Gemarisとは</a>
+      <a href="support.html">サポート</a>
+      <a href="plan.html" class="active">契約プラン</a>
+      <a href="faq.html">FAQ</a>
+      <a href="recruit.html">ライバー募集</a>
+      <a href="staff.html">スタッフ紹介</a>
+      <a href="apply.html" class="apply-btn">応募する</a>
+    </nav>
+  </div>
+</header>
+
+<!-- プラン専用ビジュアルメイン（ここですべて完結や！） -->
+<section class="plan-hero-section">
+  <div class="plan-hero-inner">
+    <div class="plan-char-container">
+      <!-- すべてのプラン内容が含まれた最強の画像を配置 -->
+      <img src="images/plan.png" alt="Gemaris 契約プラン（セルフプロ契約 還元率100% / フルサポート契約 還元率75〜95%）" class="plan-char-img">
+    </div>
+  </div>
+</section>
+
+<!-- 注記セクション（画像の下に綺麗に配置） -->
+<section class="plan-note-section">
+  <div class="container">
+    <p class="comparison-note">
+      ※どちらのプランが適しているか迷う場合は、面談時にスタッフと相談しながら決定できます。
+    </p>
+  </div>
+</section>
+
+<!-- CTAセクション -->
+<section class="cta-section section">
+  <div class="container">
+    <h2>あなたに合ったプランでスタート！</h2>
+    <p class="section-lead">活動の方向性に悩んでいる方も、まずはお気軽にご相談ください。</p>
+    <div class="cta-buttons">
+      <a href="apply.html" class="button apply-button">このプランでライバー応募</a>
+      <a href="https://discord.gg/XXXXXXXX" target="_blank" class="button discord-button">Discordで相談する</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">
+      <img src="images/image(24).png" alt="Gemaris">
+    </div>
+    <div class="footer-links">
+      <a href="index.html#about">Gemarisとは</a>
+      <a href="support.html">サポート</a>
+      <a href="plan.html">契約プラン</a>
+      <a href="faq.html">FAQ</a>
+      <a href="staff.html">スタッフ</a>
+      <a href="recruit.html">募集要項</a>
+      <a href="apply.html">応募</a>
+    </div>
+    <p>Gemaris合同会社</p>
+    <p>〒790-0942 愛媛県松山市古川北3-9-8</p>
+    <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('js-hamburger');
+  const navMenu = document.getElementById('js-nav-menu');
+
+  hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('is-active');
+      navMenu.classList.toggle('is-active');
+  });
+</script>
+</body>
+</html>

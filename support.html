@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サポート体制｜Gemaris</title>
+  <meta name="description" content="Gemarisの充実したライバーサポート体制。配信機材の無償貸与、OBS等の環境構築支援、経費補助、プロによる個別分析マネジメントであなたをトップライバーへ導きます。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/support.css">
+</head>
+<body class="gemaris-theme">
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html">
+      <img src="images/image(24).png" alt="Gemaris" class="logo">
+    </a>
+
+    <button class="hamburger" id="js-hamburger">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav-menu" id="js-nav-menu">
+      <a href="index.html#about">Gemarisとは</a>
+      <a href="support.html" class="active">サポート</a>
+      <a href="plan.html">契約プラン</a>
+      <a href="faq.html">FAQ</a>
+      <a href="recruit.html">ライバー募集</a>
+      <a href="staff.html">スタッフ紹介</a>
+      <a href="apply.html" class="apply-btn">応募する</a>
+    </nav>
+  </div>
+</header>
+
+<section class="support-intro-section">
+  <div class="container">
+    <p class="section-lead-custom">
+      Gemarisでは、所属ライバーが配信活動に100%集中できるよう、ハードウェアからソフトウェア、そして日々のモチベーション管理や戦略分析まで、業界最高水準のサポートを提供しています。
+    </p>
+  </div>
+</section>
+
+<section class="support-images-section">
+  <div class="container support-images-inner">
+    
+    <div class="support-img-box">
+      <img src="images/support.png" alt="Gemaris 機材支援制度（配線一式、音源用PC、YAMAHA AG01、環境・演出・分析サポート）" class="support-main-img">
+    </div>
+
+    <div class="support-img-box">
+      <img src="images/support2.png" alt="Gemaris 経費補助制度（サムネ制作費サポート、各種素材の制作・購入支援、小道具・オリジナルグッズ制作バックアップ）" class="support-main-img">
+    </div>
+
+  </div>
+</section>
+
+<section class="cta-section section">
+  <div class="container">
+    <h2>まずはあなたの「やりたい」を聞かせてください</h2>
+    <p class="section-lead">プランやサポートに関する疑問・相談だけでも大歓迎です。面談で最適な形を一緒に見つけましょう。</p>
+    <div class="cta-buttons">
+      <a href="apply.html" class="button apply-button">サポートを受けてライバー応募</a>
+      <a href="https://discord.gg/XXXXXXXX" target="_blank" class="button discord-button">Discordで相談する</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">
+      <img src="images/image(24).png" alt="Gemaris">
+    </div>
+    <div class="footer-links">
+      <a href="index.html#about">Gemarisとは</a>
+      <a href="support.html">サポート</a>
+      <a href="plan.html">契約プラン</a>
+      <a href="faq.html">FAQ</a>
+      <a href="staff.html">スタッフ</a>
+      <a href="recruit.html">募集要項</a>
+      <a href="apply.html">応募</a>
+    </div>
+    <p>Gemaris合同会社</p>
+    <p>〒790-0942 愛媛県松山市古川北3-9-8</p>
+    <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('js-hamburger');
+  const navMenu = document.getElementById('js-nav-menu');
+
+  hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('is-active');
+      navMenu.classList.toggle('is-active');
+  });
+
+  window.addEventListener('pageshow', () => {
+      if (navMenu) navMenu.classList.remove('is-active');
+      if (hamburger) hamburger.classList.remove('is-active');
+  });
+
+  const navLinks = navMenu.querySelectorAll('a');
+  navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          navMenu.classList.remove('is-active');
+          hamburger.classList.remove('is-active');
+      });
+  });
+</script>
+</body>
+</html>
