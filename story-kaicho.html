@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/story.css">
 
-  <style>
+<style>
     /* --- ① スマートヘッダーの基本設定 --- */
     .header {
       background: transparent !important; /* 初期状態は透明にして映画風ビジュアルを活かす */
@@ -25,19 +25,17 @@
 
     /* --- ② スマホでメニューを開いたときの超強力上書き設定 --- */
     @media screen and (max-width: 768px) {
-      /* メニュー背景が真っ黒（あるいは超高透過黒）のとき、中の文字を強制的に純白化！ */
       .nav-menu.is-active a {
         color: #ffffff !important;
         opacity: 1 !important;
         font-size: 1.4rem !important;
         font-weight: 700 !important;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2) !important; /* ほんのり光らせて視認性UP */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2) !important;
         display: block !important;
         width: 100% !important;
         text-align: center !important;
       }
 
-      /* 応募するボタンだけはNetflixレッドで目立たせる */
       .nav-menu.is-active a.apply-btn {
         background-color: #E50914 !important;
         color: #ffffff !important;
@@ -46,6 +44,38 @@
         max-width: 280px !important;
         margin: 10px auto 0 !important;
         box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4) !important;
+      }
+
+      /* ==========================================================================
+         🚨 ここから：スマホでの「チャプター04」および全体のぎゅっと感を完全破壊する設定
+         ========================================================================== */
+      
+      /* 1. カード全体のスマホ用余白を最適化して文字幅を確保！ */
+      .episode-card {
+        padding: 30px 16px !important; /* 左右を16pxまで広げて画面を有効活用 */
+        border-radius: 8px !important;
+        width: 100% !important;
+      }
+
+      /* 2. 画像で文字が死んでた「ギミックリスト」の余白を完全リセット */
+      .episode-body .gimmick-list {
+        padding: 15px 12px 15px 25px !important; /* 左側のポッチの余白だけ残して、幅を限界まで広げる */
+        margin: 20px 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* 3. リスト内の各項目（タライ設置など）も横幅いっぱいにのびのび表示 */
+      .gimmick-list li {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 10px !important;
+        padding-left: 0 !important; /* 変なインデントの重複を消去 */
+      }
+      
+      /* 4. コンテナ自体の左右の無駄な隙間も調整 */
+      .container {
+        padding: 0 12px !important;
       }
     }
   </style>
@@ -199,7 +229,30 @@
   </section>
 
 </div>
-
+<section class="next-story-section" style="padding: 60px 0 20px; text-align: center;">
+  <div class="container">
+    <p style="color: var(--net-red); font-weight: 700; letter-spacing: 0.2em; font-size: 0.85rem; margin-bottom: 10px;">ANOTHER STORY</p>
+    <h3 style="font-family: 'Noto Serif JP', serif; font-size: 1.6rem; font-weight: 900; color: #fff; margin: 0 0 25px;">
+      「ただの配信ではなく、“表現”として戦う」<br>TOPライバーが語るもう一つの思想。
+    </h3>
+    <a href="story-risa.html" class="next-story-btn" style="
+      display: inline-block;
+      padding: 14px 36px;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.03);
+    " onmouseover="this.style.background='#fff'; this.style.color='#08080a'; this.style.borderColor='#fff'" 
+       onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.color='#fff'; this.style.borderColor='rgba(255, 255, 255, 0.4)'">
+      インタビューを読む →
+    </a>
+  </div>
+</section>
 <section class="section cta-section">
   <div class="container">
     <h2>あなたは、何で勝負しますか？</h2>
