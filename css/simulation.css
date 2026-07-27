@@ -317,10 +317,34 @@ tr:hover td {
 }
 
 @media screen and (max-width: 480px) {
-  .rate-display-block { padding: 12px; }
-  .rate-chips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
-  .rate-chip { justify-content: space-between; padding: 6px 10px; }
-  .rate-chip.highlight-ss { grid-column: span 2; }
+  .rate-display-block { 
+    padding: 10px; 
+  }
+  
+  /* 📱 スマホで崩れないよう1列（縦並び）でスッキリ収める設定 */
+  .rate-chips { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 6px; 
+  }
+  
+  .rate-chip { 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 8px 12px; 
+    font-size: 0.8rem;
+  }
+
+  .chip-rank {
+    font-size: 0.78rem;
+    white-space: nowrap; /* 勝手な改行を防止 */
+  }
+
+  .chip-val {
+    font-size: 0.88rem;
+    white-space: nowrap;
+  }
   
   .meter-cards { flex-direction: column; gap: 6px; }
   .meter-card { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; }
