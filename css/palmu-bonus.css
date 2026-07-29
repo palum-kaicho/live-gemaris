@@ -1,5 +1,8 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
+/* ==========================================================================
+   全体基本設定
+   ========================================================================== */
 body {
     margin: 0;
     padding: 0;
@@ -16,7 +19,9 @@ body {
     box-sizing: border-box;
 }
 
-/* ヘッダー */
+/* ==========================================================================
+   ヘッダー（Header）
+   ========================================================================== */
 .header {
     background: #ffffff;
     border-bottom: 1px solid #eef0f4;
@@ -33,23 +38,81 @@ body {
     height: 70px;
 }
 
-.logo { height: 40px; width: auto; display: block; }
+.logo {
+    height: 40px;
+    width: auto;
+    display: block;
+}
 
-.nav-menu { display: flex; align-items: center; gap: 20px; }
-.nav-menu a { text-decoration: none; color: #444; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-.nav-menu a:hover { color: #ff3b68; }
-.nav-menu .apply-btn { background: #ff3b68; color: #ffffff; padding: 8px 18px; border-radius: 20px; font-weight: bold; }
+/* ナビゲーションメニュー (PC) */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
-.hamburger { display: none; background: none; border: none; cursor: pointer; width: 30px; height: 24px; position: relative; z-index: 1001; }
-.hamburger span { display: block; width: 100%; height: 3px; background-color: #333; border-radius: 2px; position: absolute; transition: all 0.3s ease; }
+.nav-menu a {
+    text-decoration: none;
+    color: #444444;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: #ff3b68;
+}
+
+.nav-menu .apply-btn {
+    background: #ff3b68;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.nav-menu .apply-btn:hover {
+    background: #e02e55;
+    color: #ffffff;
+}
+
+/* ハンバーガーボタン (初期状態は非表示) */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
 .hamburger span:nth-child(1) { top: 0; }
 .hamburger span:nth-child(2) { top: 10px; }
 .hamburger span:nth-child(3) { top: 20px; }
+
+/* ハンバーガー開閉用（JSでactiveが付与された時） */
 .hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
-/* メインコンテンツ */
+
+/* ==========================================================================
+   メインコンテンツ（Palmuキャンペーン報酬）
+   ========================================================================== */
 .palmu-campaign-container {
     max-width: 800px;
     margin: 40px auto;
@@ -86,8 +149,14 @@ body {
     margin-bottom: 25px;
 }
 
-.palmu-info-box p { margin: 0 0 10px 0; font-size: 0.95em; }
-.palmu-info-box p:last-child { margin-bottom: 0; }
+.palmu-info-box p {
+    margin: 0 0 10px 0;
+    font-size: 0.95em;
+}
+
+.palmu-info-box p:last-child {
+    margin-bottom: 0;
+}
 
 .palmu-badge-common {
     display: inline-block;
@@ -128,29 +197,141 @@ body {
     flex-wrap: wrap;
 }
 
-.bonus-title { font-size: 1.05em; font-weight: bold; color: #222; margin: 0; }
-.bonus-price { font-size: 1.3em; font-weight: bold; color: #ff3b68; white-space: nowrap; }
+.bonus-title {
+    font-size: 1.05em;
+    font-weight: bold;
+    color: #222222;
+    margin: 0;
+}
 
-.bonus-list { margin: 0; padding-left: 18px; font-size: 0.88em; color: #444; }
-.bonus-list li { margin-bottom: 6px; line-height: 1.5; }
-.bonus-note { font-size: 0.8em; color: #ff3b68; margin-top: 8px; font-weight: bold; list-style: none; margin-left: -18px; }
+.bonus-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #ff3b68;
+    white-space: nowrap;
+}
 
-/* フッター */
-.footer { background: #ffffff; border-top: 1px solid #eef0f4; padding: 40px 0 20px; margin-top: 60px; }
-.footer-logo { text-align: center; margin-bottom: 20px; }
-.footer-logo img { max-height: 45px; width: auto; }
-.footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px 25px; margin-bottom: 20px; }
-.footer-links a { text-decoration: none; color: #555; font-size: 0.85rem; }
-.copyright { text-align: center; font-size: 0.75rem; color: #888; margin-top: 20px; }
+.bonus-list {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.88em;
+    color: #444444;
+}
 
+.bonus-list li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.bonus-note {
+    font-size: 0.8em;
+    color: #ff3b68;
+    margin-top: 8px;
+    font-weight: bold;
+    list-style: none;
+    margin-left: -18px;
+}
+
+/* ==========================================================================
+   フッター（Footer）
+   ========================================================================== */
+.footer {
+    background: #ffffff;
+    border-top: 1px solid #eef0f4;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.footer-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    max-height: 45px;
+    width: auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #555555;
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: #ff3b68;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #888888;
+    margin-top: 20px;
+}
+
+/* ==========================================================================
+   レスポンシブ対応 (スマホ用: 768px以下)
+   ========================================================================== */
 @media (max-width: 768px) {
-    .hamburger { display: block; }
-    .nav-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 300px; height: 100vh; background: #fff; flex-direction: column; align-items: flex-start; padding: 80px 30px 30px; transition: right 0.3s; box-sizing: border-box; }
-    .nav-menu.active { right: 0; }
-    .nav-menu a { width: 100%; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+    /* ヘッダー・スマホメニュー */
+    .hamburger {
+        display: block;
+    }
 
-    .palmu-campaign-container { margin: 20px auto; }
-    .palmu-card { padding: 20px 15px; }
-    .palmu-main-title { font-size: 19px; }
-    .palmu-grid { grid-template-columns: 1fr; }
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 30px 30px;
+        box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+        transition: right 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu a {
+        font-size: 1rem;
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-menu .apply-btn {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    /* メインコンテンツスマホ最適化 */
+    .palmu-campaign-container {
+        margin: 20px auto;
+    }
+
+    .palmu-card {
+        padding: 20px 15px;
+    }
+
+    .palmu-main-title {
+        font-size: 19px;
+    }
+
+    .palmu-grid {
+        grid-template-columns: 1fr;
+    }
 }
