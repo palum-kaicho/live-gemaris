@@ -6,8 +6,25 @@
     <title>Palmuキャンペーン報酬</title>
     <!-- 専用CSSの読み込み -->
     <link rel="stylesheet" href="css/palmu-bonus.css">
+    <style>
+      /* 画像表示用のレイアウト調整 */
+      .palmu-bonus-page-container {
+        width: 100%;
+        max-width: 1125px;
+        margin: 0 auto;
+        padding-top: 0;
+        padding-bottom: 40px;
+      }
+      .palmu-bonus-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: none;
+      }
+    </style>
 </head>
 <body>
+
 <header class="header">
     <div class="container header-inner">
       <a href="index.html">
@@ -28,87 +45,30 @@
         <a href="apply.html" class="apply-btn">応募はこちら</a>
       </nav>
     </div>
-  </header>
-<div class="palmu-campaign-container">
-    <div class="palmu-card">
-        <!-- メインタイトル -->
-        <h1 class="palmu-main-title">■ Palmuキャンペーン報酬</h1>
+</header>
 
-        <!-- 概要・共通適用条件 -->
-        <div class="palmu-info-box">
-            <span class="palmu-badge-common">【概要】</span>
-            <p>5月から増額されたPalmuの新規ライバー獲得・育成に伴うキャンペーンです。<br>
-            顔出し・ラジオ問わず、過去にPalmuでの配信経験がない新規ライバーが対象となります。</p>
-            
-            <div style="margin-top: 12px;">
-                <span class="palmu-badge-common" style="background: #444;">【適用条件（共通）】</span>
-                <p>・配信時間のカウント上限：  <br><strong>1日あたり2時間まで</strong></p>
-            </div>
-        </div>
+<!-- メインコンテンツ（画像3連） -->
+<main class="palmu-bonus-page-container">
+    <!-- 1枚目 -->
+    <div class="bonus-img-wrap">
+      <img src="images/bonus.png" alt="Palmuキャンペーン報酬" class="palmu-bonus-img">
+    </div>
 
-        <!-- ボーナス一覧（2列 / スマホ1列） -->
-        <div class="palmu-grid">
-            
-            <!-- 1. B到達 ボーナス -->
-            <div class="bonus-card">
-                <div>
-                    <div class="bonus-header">
-                        <h2 class="bonus-title">1. B到達 ボーナス</h2>
-                        <span class="bonus-price">¥45,000</span>
-                    </div>
-                    <ul class="bonus-list">
-                        <li>初配信日から30日以内に<br>30時間以上配信</li>
-                        <li>初配信日から30日以内に<br>B1ランクに到達</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- 2枚目 -->
+    <div class="bonus-img-wrap">
+      <img src="images/bonus02.png" alt="4つの特別ボーナス" class="palmu-bonus-img">
+    </div>
 
-            <!-- 2. A到達 ボーナス -->
-            <div class="bonus-card">
-                <div>
-                    <div class="bonus-header">
-                        <h2 class="bonus-title">2. A到達 ボーナス</h2>
-                        <span class="bonus-price">¥100,000</span>
-                    </div>
-                    <ul class="bonus-list">
-                        <li>初配信日から60日以内に<br>60時間以上配信</li>
-                        <li>初配信日から60日以内に<br>A1ランクに到達</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- 3枚目（お問い合わせボタン） -->
+    <div class="bonus-img-wrap" style="position: relative;">
+      <img src="images/bonus03.png" alt="お問い合わせ" class="palmu-bonus-img" usemap="#bonus03-map" id="js-bonus03-img">
+      <map name="bonus03-map" id="bonus03-map">
+        <!-- お問い合わせボタン：メール起動に変更 -->
+        <area shape="rect" coords="110,600,1015,790" href="mailto:info@live-gemaris.com?subject=【Palmuキャンペーン】お問い合わせ" alt="お問い合わせはこちら" class="map-link">
+      </map>
+    </div>
+</main>
 
-            <!-- 3. B継続 ボーナス -->
-            <div class="bonus-card">
-                <div>
-                    <div class="bonus-header">
-                        <h2 class="bonus-title">3. B継続 ボーナス</h2>
-                        <span class="bonus-price">¥50,000</span>
-                    </div>
-                    <ul class="bonus-list">
-                        <li>初配信日から60日以内に60時間以上配信</li>
-                        <li>初配信日から31日〜60日の間にB1ランク以上を維持</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 4. U18デビュー ボーナス -->
-            <div class="bonus-card">
-                <div>
-                    <div class="bonus-header">
-                        <h2 class="bonus-title">4. U18デビュー ボーナス</h2>
-                        <span class="bonus-price">¥50,000</span>
-                    </div>
-                    <ul class="bonus-list">
-                        <li>ライバー申請時に18歳以下であることが確認可能</li>
-                        <li>初配信日から30日以内に<br>30時間以上配信</li>
-                        <li>初配信日から30日以内に<br>ステアプチャレンジを達成</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div><!-- /.palmu-grid -->
-    </div><!-- /.palmu-card -->
-</div>
 <footer class="footer">
     <div class="container">
       <div class="footer-logo">
@@ -121,6 +81,7 @@
         <a href="plan.html">契約プラン</a>
         <a href="recruit.html">募集要項</a>
         <a href="staff.html">スタッフ紹介</a>
+        <!-- フッターの応募もメールにしたければ mailto: に変更可能やで -->
         <a href="apply.html">応募</a>
       </div>
 
@@ -131,6 +92,55 @@
 
       <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
     </div>
-  </footer>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  /* ハンバーガーメニュー */
+  const hamburger = document.getElementById('js-hamburger');
+  const navMenu = document.getElementById('js-nav-menu');
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+
+  /* 画像マップレスポンシブ処理 */
+  const b3Img = document.getElementById('js-bonus03-img');
+  const b3Area = document.querySelector('map[name="bonus03-map"] area');
+  const b3OriginalWidth = 1125;
+  const b3OriginalHeight = 1000;
+  const b3OriginalCoords = [110, 600, 1015, 790];
+
+  function resizeBonus03Map() {
+    if (!b3Img || !b3Area) return;
+    const rect = b3Img.getBoundingClientRect();
+    const ratioX = rect.width / b3OriginalWidth;
+    const ratioY = rect.height / b3OriginalHeight;
+    const newCoords = [
+      Math.round(b3OriginalCoords[0] * ratioX),
+      Math.round(b3OriginalCoords[1] * ratioY),
+      Math.round(b3OriginalCoords[2] * ratioX),
+      Math.round(b3OriginalCoords[3] * ratioY)
+    ];
+    b3Area.setAttribute('coords', newCoords.join(','));
+  }
+
+  window.addEventListener('load', resizeBonus03Map);
+  window.addEventListener('resize', resizeBonus03Map);
+  if (b3Img) {
+    b3Img.complete ? resizeBonus03Map() : b3Img.addEventListener('load', resizeBonus03Map);
+  }
+</script>
+
 </body>
 </html>

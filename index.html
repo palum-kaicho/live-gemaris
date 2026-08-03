@@ -72,53 +72,27 @@
 <!-- ==========================================================================
      Palmuライバー限定特別キャンペーンセクション
      ========================================================================== -->
+<!-- ==========================================================================
+     Palmuライバー限定特別キャンペーンセクション（画像差し替え版）
+     ========================================================================== -->
 <section class="section index-palmu-campaign-section" id="palmu-campaign" style="padding: 40px 0; background: transparent; position: relative; overflow: hidden;">
   <div class="container wide-bleed-container">
-    <div class="main-content-card" style="margin: 0 10px; background: linear-gradient(135deg, #ffffff 0%, #faf7f2 100%); border: 1px solid rgba(156, 42, 42, 0.2);">
+    <div class="palmu-banner-wrap" style="position: relative; width: 100%; margin: 0 auto;">
       
-      <!-- セクションヘッダー -->
-      <div class="card-header-luxury" style="text-align: center; border-bottom: 1px dashed rgba(229, 221, 209, 0.8);">
-        <span style="letter-spacing: 0.15em;">SPECIAL CAMPAIGN</span>
-        <h2 style="font-size: 1.5rem; color: #2b2b2b; margin-top: 5px;">Palmuライバー限定 特別キャンペーン</h2>
-      </div>
-
-      <p class="card-lead-text" style="text-align: center; font-size: 0.95rem; margin-bottom: 25px;">
-        GemarisではPalmuで配信を開始するライバー様を対象に、<br>スタートダッシュを強力に<br>バックアップする特別報酬＆特典を<br>ご用意しています！
-      </p>
-
-      <!-- 導線カード2列エリア -->
-      <div class="palmu-banner-grid" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+      <!-- バナー画像 -->
+      <img src="images/index-bonus.png" alt="Palmuライバー限定 特別キャンペーン" class="palmu-img-map-target" usemap="#index-palmu-map" id="js-index-palmu-img" style="width: 100%; height: auto; display: block; border: none;">
+      
+      <!-- クリッカブルマップ（ボタンのタップ領域） -->
+      <map name="index-palmu-map" id="index-palmu-map">
+        <!-- キャンペーン詳細を見る（新規ライバー対象） -->
+        <area shape="rect" coords="120,1350,1005,1470" href="palmu-bonus.html" alt="キャンペーン詳細を見る" class="map-link">
         
-        <!-- カード1: Palmuキャンペーン報酬 (新規向け) -->
-        <div class="palmu-nav-card" style="flex: 1; min-width: 260px; background: #ffffff; border: 1px solid rgba(229, 221, 209, 0.8); border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <span style="display: inline-block; background: #9c2a2a; color: #fff; font-size: 0.75rem; font-weight: bold; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;">新規ライバー対象</span>
-            <h3 style="font-size: 1.2rem; font-weight: 600; color: #2b2b2b; margin-bottom: 10px;">Palmuキャンペーン報酬</h3>
-            <p style="font-size: 0.85rem; color: #666; line-height: 1.6; margin-bottom: 15px;">
-              初配信からランク達成や継続配信で豪華ボーナス！B到達・A到達・U18限定報酬などの詳細はこちら。
-            </p>
-          </div>
-          <a href="palmu-bonus.html" class="gemaris-luxury-final-btn" style="font-size: 0.9rem; padding: 10px 20px; width: 100%; box-sizing: border-box; display: block; margin-top: 10px;">
-            キャンペーン詳細を見る
-          </a>
-        </div>
-
-        <!-- カード2: プレミアスタートキャンペーン (経験者向け) -->
-        <div class="palmu-nav-card" style="flex: 1; min-width: 260px; background: #ffffff; border: 1px solid rgba(156, 42, 42, 0.3); border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 4px 15px rgba(156, 42, 42, 0.08); display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: 0; right: 0; background: #6a1b1b; color: #fff; font-size: 0.65rem; padding: 2px 10px; border-bottom-left-radius: 8px; font-weight: bold;">経験者優遇</div>
-          <div>
-            <span style="display: inline-block; background: #2b2b2b; color: #fff; font-size: 0.75rem; font-weight: bold; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;">他アプリ実績者対象</span>
-            <h3 style="font-size: 1.2rem; font-weight: 600; color: #2b2b2b; margin-bottom: 10px;">プレミアスタート<br>キャンペーン</h3>
-            <p style="font-size: 0.85rem; color: #666; line-height: 1.6; margin-bottom: 15px;">
-              B1ランクスタートや月給保証制度、最大2倍の特別増額ボーナスなど、圧倒的優遇プログラムを用意！
-            </p>
-          </div>
-          <a href="premier-campaign.html" class="gemaris-luxury-final-btn" style="font-size: 0.9rem; padding: 10px 20px; width: 100%; box-sizing: border-box; display: block; margin-top: 10px; background: #9c2a2a;">
-            プレミア特典を見る
-          </a>
-        </div>
-
-      </div>
+        <!-- プレミア特典を見る（他アプリ実績者対象） -->
+        <area shape="rect" coords="120,2045,1005,2165" href="premier-campaign.html" alt="プレミア特典を見る" class="map-link">
+        
+        <!-- お問い合わせはこちら -->
+        <area shape="rect" coords="155,2290,970,2400" href="apply.html" alt="お問い合わせはこちら" class="map-link">
+      </map>
 
     </div>
   </div>
@@ -216,107 +190,148 @@
     </div>
   </footer>
 
-  <script>
-    /* ハンバーガーメニュー */
-    const hamburger = document.getElementById('js-hamburger');
-    const navMenu = document.getElementById('js-nav-menu');
+<script>
+  /* ==========================================================================
+     1. ハンバーガーメニュー制御
+     ========================================================================== */
+  const hamburger = document.getElementById('js-hamburger');
+  const navMenu = document.getElementById('js-nav-menu');
 
-    if (hamburger && navMenu) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('is-active');
-        navMenu.classList.toggle('is-active');
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('is-active');
+      navMenu.classList.toggle('is-active');
+    });
+
+    // メニュー内のリンクをクリックしたら自動で閉じる
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-active');
+        navMenu.classList.remove('is-active');
       });
+    });
+  }
 
-      document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('is-active');
-          navMenu.classList.remove('is-active');
-        });
-      });
-    }
+  /* ==========================================================================
+     2. 画像マップ（<map> <area>）レスポンシブ自動調整処理
+     ========================================================================== */
 
-    /* recruit.png リサイズ */
-    const indexImg = document.getElementById('js-index-recruit-img');
-    const indexArea = document.querySelector('map[name="index-recruit-map"] area');
-    const idxOriginalWidth = 1125;
-    const idxOriginalHeight = 2436;
-    const idxOriginalCoords = [145, 2170, 980, 2330];
+  /* --- A. Palmu特別キャンペーン (index-bonus.png) --- */
+  const palmuImg = document.getElementById('js-index-palmu-img');
+  const palmuAreas = document.querySelectorAll('map[name="index-palmu-map"] area');
+  const palmuOriginalWidth = 1125;
+  const palmuOriginalHeight = 2436;
+  const palmuOriginalCoords = [
+    [120, 1350, 1005, 1470], /* キャンペーン詳細を見る */
+    [120, 2045, 1005, 2165], /* プレミア特典を見る */
+    [155, 2290, 970, 2400]   /* お問い合わせはこちら */
+  ];
 
-    function resizeIndexMap() {
-      if (!indexImg || !indexArea) return;
-      const rect = indexImg.getBoundingClientRect();
-      const ratioX = rect.width / idxOriginalWidth;
-      const ratioY = rect.height / idxOriginalHeight;
+  function resizePalmuMap() {
+    if (!palmuImg || palmuAreas.length === 0) return;
+    const rect = palmuImg.getBoundingClientRect();
+    const ratioX = rect.width / palmuOriginalWidth;
+    const ratioY = rect.height / palmuOriginalHeight;
+    palmuAreas.forEach((area, index) => {
+      const base = palmuOriginalCoords[index];
+      if (!base) return;
       const newCoords = [
-        Math.round(idxOriginalCoords[0] * ratioX),
-        Math.round(idxOriginalCoords[1] * ratioY),
-        Math.round(idxOriginalCoords[2] * ratioX),
-        Math.round(idxOriginalCoords[3] * ratioY)
+        Math.round(base[0] * ratioX),
+        Math.round(base[1] * ratioY),
+        Math.round(base[2] * ratioX),
+        Math.round(base[3] * ratioY)
       ];
-      indexArea.setAttribute('coords', newCoords.join(','));
-    }
+      area.setAttribute('coords', newCoords.join(','));
+    });
+  }
 
-    /* support + plan リサイズ */
-    const combImg = document.getElementById('js-index-comb-img');
-    const combAreas = document.querySelectorAll('map[name="index-comb-map"] area');
-    const combOriginalWidth = 1125;
-    const combOriginalHeight = 2436;
-    const combOriginalCoords = [
-      [90, 1240, 1035, 1360],
-      [90, 2280, 1035, 2400]
+  /* --- B. サポート＆プラン (index-support.png) --- */
+  const combImg = document.getElementById('js-index-comb-img');
+  const combAreas = document.querySelectorAll('map[name="index-comb-map"] area');
+  const combOriginalWidth = 1125;
+  const combOriginalHeight = 2436;
+  const combOriginalCoords = [
+    [90, 1240, 1035, 1360], /* サポート詳細 */
+    [90, 2280, 1035, 2400]  /* プラン詳細 */
+  ];
+
+  function resizeCombMap() {
+    if (!combImg || combAreas.length === 0) return;
+    const rect = combImg.getBoundingClientRect();
+    const ratioX = rect.width / combOriginalWidth;
+    const ratioY = rect.height / combOriginalHeight;
+    combAreas.forEach((area, index) => {
+      const base = combOriginalCoords[index];
+      if (!base) return;
+      const newCoords = [
+        Math.round(base[0] * ratioX),
+        Math.round(base[1] * ratioY),
+        Math.round(base[2] * ratioX),
+        Math.round(base[3] * ratioY)
+      ];
+      area.setAttribute('coords', newCoords.join(','));
+    });
+  }
+
+  /* --- C. リクルート (recruit.png) --- */
+  const indexImg = document.getElementById('js-index-recruit-img');
+  const indexArea = document.querySelector('map[name="index-recruit-map"] area');
+  const idxOriginalWidth = 1125;
+  const idxOriginalHeight = 2436;
+  const idxOriginalCoords = [145, 2170, 980, 2330];
+
+  function resizeIndexMap() {
+    if (!indexImg || !indexArea) return;
+    const rect = indexImg.getBoundingClientRect();
+    const ratioX = rect.width / idxOriginalWidth;
+    const ratioY = rect.height / idxOriginalHeight;
+    const newCoords = [
+      Math.round(idxOriginalCoords[0] * ratioX),
+      Math.round(idxOriginalCoords[1] * ratioY),
+      Math.round(idxOriginalCoords[2] * ratioX),
+      Math.round(idxOriginalCoords[3] * ratioY)
     ];
+    indexArea.setAttribute('coords', newCoords.join(','));
+  }
 
-    function resizeCombMap() {
-      if (!combImg || combAreas.length === 0) return;
-      const rect = combImg.getBoundingClientRect();
-      const ratioX = rect.width / combOriginalWidth;
-      const ratioY = rect.height / combOriginalHeight;
-      combAreas.forEach((area, index) => {
-        const base = combOriginalCoords[index];
-        if (!base) return;
-        const newCoords = [
-          Math.round(base[0] * ratioX),
-          Math.round(base[1] * ratioY),
-          Math.round(base[2] * ratioX),
-          Math.round(base[3] * ratioY)
-        ];
-        area.setAttribute('coords', newCoords.join(','));
-      });
-    }
+  /* --- D. スタッフ紹介 (staff.png) --- */
+  const staffImg = document.getElementById('js-index-staff-img');
+  const staffArea = document.querySelector('map[name="index-staff-map"] area');
+  const stfOriginalWidth = 1125;
+  const stfOriginalHeight = 2436;
+  const stfOriginalCoords = [110, 2040, 1015, 2240];
 
-    /* staff.png 用リサイズ */
-    const staffImg = document.getElementById('js-index-staff-img');
-    const staffArea = document.querySelector('map[name="index-staff-map"] area');
-    const stfOriginalWidth = 1125;
-    const stfOriginalHeight = 2436;
-    const stfOriginalCoords = [110, 2040, 1015, 2240];
+  function resizeStaffMap() {
+    if (!staffImg || !staffArea) return;
+    const rect = staffImg.getBoundingClientRect();
+    const ratioX = rect.width / stfOriginalWidth;
+    const ratioY = rect.height / stfOriginalHeight;
+    const newCoords = [
+      Math.round(stfOriginalCoords[0] * ratioX),
+      Math.round(stfOriginalCoords[1] * ratioY),
+      Math.round(stfOriginalCoords[2] * ratioX),
+      Math.round(stfOriginalCoords[3] * ratioY)
+    ];
+    staffArea.setAttribute('coords', newCoords.join(','));
+  }
 
-    function resizeStaffMap() {
-      if (!staffImg || !staffArea) return;
-      const rect = staffImg.getBoundingClientRect();
-      const ratioX = rect.width / stfOriginalWidth;
-      const ratioY = rect.height / stfOriginalHeight;
-      const newCoords = [
-        Math.round(stfOriginalCoords[0] * ratioX),
-        Math.round(stfOriginalCoords[1] * ratioY),
-        Math.round(stfOriginalCoords[2] * ratioX),
-        Math.round(stfOriginalCoords[3] * ratioY)
-      ];
-      staffArea.setAttribute('coords', newCoords.join(','));
-    }
+  /* --- E. 全マップ一括更新関数 --- */
+  function updateAllMaps() {
+    resizePalmuMap();
+    resizeCombMap();
+    resizeIndexMap();
+    resizeStaffMap();
+  }
 
-    function updateAllMaps() {
-      resizeIndexMap();
-      resizeCombMap();
-      resizeStaffMap();
-    }
+  /* イベントリスナー（読み込み時・リサイズ時） */
+  window.addEventListener('load', updateAllMaps);
+  window.addEventListener('resize', updateAllMaps);
 
-    window.addEventListener('load', updateAllMaps);
-    window.addEventListener('resize', updateAllMaps);
-
-    if (indexImg) { indexImg.complete ? resizeIndexMap() : indexImg.addEventListener('load', resizeIndexMap); }
-    if (combImg) { combImg.complete ? resizeCombMap() : combImg.addEventListener('load', resizeCombMap); }
-    if (staffImg) { staffImg.complete ? resizeStaffMap() : staffImg.addEventListener('load', resizeStaffMap); }
-  </script>
+  /* 画像キャッシュ対策（すでに画像読み込み完了している場合の個別実行） */
+  if (palmuImg) { palmuImg.complete ? resizePalmuMap() : palmuImg.addEventListener('load', resizePalmuMap); }
+  if (combImg) { combImg.complete ? resizeCombMap() : combImg.addEventListener('load', resizeCombMap); }
+  if (indexImg) { indexImg.complete ? resizeIndexMap() : indexImg.addEventListener('load', resizeIndexMap); }
+  if (staffImg) { staffImg.complete ? resizeStaffMap() : staffImg.addEventListener('load', resizeStaffMap); }
+</script>
 </body>
 </html>
