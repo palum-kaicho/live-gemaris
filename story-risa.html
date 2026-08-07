@@ -36,7 +36,9 @@
   </div>
 </header>
 
+  <!-- HERO: バックグラウンド透かし素材配置 -->
   <section class="interview-hero">
+    <img src="images/talent02.png" alt="RISA" class="hero-bg-person-mag" id="js-hero-person">
     <div class="container">
       <div class="interview-tag">INTERVIEW / TOP LIVER</div>
       <h1>スマホ1つで世界を<br>変える。</h1>
@@ -52,7 +54,7 @@
 
   <main class="interview-container container">
 
-    <div class="interview-stream">
+      <div class="interview-stream">
 
       <article class="interview-row" style="margin-bottom: 60px;">
         <div class="question">
@@ -213,6 +215,8 @@
     const hamburger = document.getElementById('js-hamburger');
     const navMenu = document.getElementById('js-nav-menu');
     const header = document.querySelector('.header');
+    const heroPerson = document.getElementById('js-hero-person');
+    const portraitCard = document.getElementById('js-portrait-card');
 
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
@@ -237,14 +241,40 @@
     let lastScrollY = window.scrollY;
 
     window.addEventListener('scroll', () => {
-        if (navMenu && navMenu.classList.contains('is-active')) return;
+        const scrolled = window.scrollY;
 
-        if (window.scrollY > lastScrollY && window.scrollY > 150) {
-            header.classList.add('is-hide');
-        } else {
-            header.classList.remove('is-hide');
+        // スマートヘッダー
+        if (navMenu && !navMenu.classList.contains('is-active')) {
+            if (scrolled > lastScrollY && scrolled > 150) {
+                header.classList.add('is-hide');
+            } else {
+                header.classList.remove('is-hide');
+            }
         }
-        lastScrollY = window.scrollY;
+        lastScrollY = scrolled;
+
+        // HERO画像 パララックス
+        if (heroPerson && scrolled < 600) {
+            heroPerson.style.transform = `translate(-50%, ${scrolled * 0.15}px)`;
+        }
+
+        // ポートレートカード スクロールフェードイン
+        if (portraitCard) {
+            const cardRect = portraitCard.getBoundingClientRect();
+            if (cardRect.top < window.innerHeight * 0.85) {
+                portraitCard.classList.add('is-visible');
+            }
+        }
+    });
+
+    // 初期ロード時判定
+    window.addEventListener('load', () => {
+        if (portraitCard) {
+            const cardRect = portraitCard.getBoundingClientRect();
+            if (cardRect.top < window.innerHeight * 0.85) {
+                portraitCard.classList.add('is-visible');
+            }
+        }
     });
 </script>
 </body>

@@ -1,87 +1,249 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>所属ライバーの思想｜エンタメで頂点へ｜Gemaris</title>
-  <meta name="description" content="配信歴11年の所属ライバーが語る、エンタメ哲学とPalmuへの挑戦">
+  <title>【インタビュー】「エンタメ一本で、いつか覇権を獲る」配信歴11年の男がPalmuで証明したいプライド｜Gemaris</title>
+  <meta name="description" content="配信歴11年。数々のプラットフォームを渡り歩いてきた男が、なぜ今Palmuを選ぶのか。Gemaris所属ライバー・会長が語る、エンタメへの熱量と覚悟。">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/story.css">
-
-<style>
-    /* --- ① スマートヘッダーの基本設定 --- */
-    .header {
-      background: transparent !important; /* 初期状態は透明にして映画風ビジュアルを活かす */
-      transition: transform 0.3s ease, background-color 0.3s ease !important;
+  
+  <style>
+    /* =========================================
+       NETFLIX-STYLE DARK CINEMATIC OVERRIDE
+    ========================================= */
+    body.page-story-kaicho {
+      background-color: #0d0d0d;
+      color: #e5e5e5;
+      font-family: 'Noto Sans JP', sans-serif;
     }
-    
-    /* スクロールダウンで隠す用 */
+
+    .page-story-kaicho .header {
+      position: fixed !important;
+      background: rgba(13, 13, 13, 0.9) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .page-story-kaicho .nav-menu a {
+      color: #fff;
+    }
+
+    .page-story-kaicho .hamburger span {
+      background: #fff !important;
+    }
+
+    .kaicho-hero {
+      position: relative;
+      padding: 180px 0 80px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 30%, rgba(229, 9, 20, 0.15) 0%, transparent 70%), #0d0d0d;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-bg-person-dark {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      opacity: 0.25;
+      filter: grayscale(80%) contrast(1.3) brightness(0.8);
+      pointer-events: none;
+      z-index: 0;
+      transition: transform 0.1s ease-out;
+    }
+
+    .kaicho-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .kaicho-tag {
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      color: #e50914;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .kaicho-hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.4;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    .kaicho-hero h1 span {
+      display: block;
+      font-size: 0.65em;
+      color: #e50914;
+      margin-top: 10px;
+    }
+
+    .netflix-card {
+      max-width: 560px;
+      margin: 0 auto 70px;
+      background: #181818;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 20px rgba(229, 9, 20, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .netflix-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .netflix-card-img-wrapper {
+      position: relative;
+      background: linear-gradient(180deg, #252525 0%, #101010 100%);
+      padding-top: 20px;
+    }
+
+    .netflix-card-img-wrapper img {
+      width: 85%;
+      max-width: 380px;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 15px 25px rgba(0,0,0,0.9));
+    }
+
+    .netflix-card-info {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #141414;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .netflix-badge {
+      background: #e50914;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+    }
+
+    .netflix-meta {
+      font-size: 0.75rem;
+      color: #aaa;
+      letter-spacing: 0.05em;
+    }
+
+    .kaicho-stream .question h2 {
+      color: #fff;
+      border-left: 3px solid #e50914;
+      padding-left: 14px;
+    }
+
+    .kaicho-stream .question h2 span {
+      color: #e50914;
+    }
+
+    .kaicho-stream .question h2 small {
+      color: #888;
+    }
+
+    .kaicho-stream .answer p {
+      color: #ccc;
+      line-height: 1.8;
+      margin-bottom: 1.2em;
+    }
+
+    /* こだわりリスト＆ハイライト箇所の装飾 */
+    .tech-list {
+      background: #141414;
+      border-left: 3px solid #e50914;
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .tech-list ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #ddd;
+    }
+
+    .tech-list li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .tech-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .quote-box {
+      border: 1px solid rgba(229, 9, 20, 0.4);
+      background: rgba(229, 9, 20, 0.05);
+      padding: 24px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .quote-box p {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff !important;
+      margin: 0 !important;
+    }
+
+    .kaicho-cta {
+      background: #141414;
+      padding: 90px 0;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .kaicho-cta h2 {
+      color: #fff;
+      font-family: 'Noto Serif JP', serif;
+    }
+
+    .netflix-btn {
+      display: inline-block;
+      background: #e50914;
+      color: #fff;
+      text-decoration: none;
+      padding: 16px 48px;
+      font-weight: 900;
+      border-radius: 4px;
+      letter-spacing: 0.1em;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(229, 9, 20, 0.4);
+    }
+
+    .netflix-btn:hover {
+      background: #f40612;
+      transform: scale(1.05);
+    }
+
     .header.is-hide {
       transform: translateY(-100%) !important;
     }
-
-    /* --- ② スマホでメニューを開いたときの超強力上書き設定 --- */
-    @media screen and (max-width: 768px) {
-      .nav-menu.is-active a {
-        color: #ffffff !important;
-        opacity: 1 !important;
-        font-size: 1.4rem !important;
-        font-weight: 700 !important;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.2) !important;
-        display: block !important;
-        width: 100% !important;
-        text-align: center !important;
-      }
-
-      .nav-menu.is-active a.apply-btn {
-        background-color: #E50914 !important;
-        color: #ffffff !important;
-        padding: 12px 24px !important;
-        border-radius: 4px !important;
-        max-width: 280px !important;
-        margin: 10px auto 0 !important;
-        box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4) !important;
-      }
-
-      /* ==========================================================================
-         🚨 ここから：スマホでの「チャプター04」および全体のぎゅっと感を完全破壊する設定
-         ========================================================================== */
-      
-      /* 1. カード全体のスマホ用余白を最適化して文字幅を確保！ */
-      .episode-card {
-        padding: 30px 16px !important; /* 左右を16pxまで広げて画面を有効活用 */
-        border-radius: 8px !important;
-        width: 100% !important;
-      }
-
-      /* 2. 画像で文字が死んでた「ギミックリスト」の余白を完全リセット */
-      .episode-body .gimmick-list {
-        padding: 15px 12px 15px 25px !important; /* 左側のポッチの余白だけ残して、幅を限界まで広げる */
-        margin: 20px 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      /* 3. リスト内の各項目（タライ設置など）も横幅いっぱいにのびのび表示 */
-      .gimmick-list li {
-        font-size: 0.95rem !important;
-        line-height: 1.6 !important;
-        margin-bottom: 10px !important;
-        padding-left: 0 !important; /* 変なインデントの重複を消去 */
-      }
-      
-      /* 4. コンテナ自体の左右の無駄な隙間も調整 */
-      .container {
-        padding: 0 12px !important;
-      }
-    }
   </style>
 </head>
-
-<body>
+<body class="page-story-kaicho">
 
 <header class="header">
   <div class="container header-inner">
@@ -100,185 +262,148 @@
       <a href="index.html#recruit-teaser">リクルート</a>
       <a href="index.html#story-section">インタビュー</a>
       <a href="index.html#staff-teaser">スタッフ</a>
-      <a href="apply.html" class="apply-btn">応募はこちら</a>
+      <a href="apply.html" class="apply-btn" style="background: #e50914;">応募はこちら</a>
     </nav>
   </div>
 </header>
 
-
-
-<section class="hero-story">
-  <div class="hero-content">
-    <p class="tag">GEMARIS ORIGINAL DOCUMENTARY</p>
-    <h1>
-      エンタメ一本で、<br>
-      いつか覇権を獲る。
-    </h1>
-    <p class="sub">
-      配信歴11年の男が、Palmuで証明したい<br>唯一無二のプライド。
-    </p>
-    <div class="scroll">
-      <span>EXPLORE STORY</span>
-      <div class="arrow"></div>
-    </div>
-  </div>
-</section>
-
-<section class="section intro-section">
-  <div class="container">
-    <div class="prologue-box">
-      <p class="quote">「小細工はいらない。配信力だけで人は魅了できる」</p>
-      <p class="lead-text">
-        エンタメ一本で、いつか覇権を獲る。<br>
-        配信歴11年の男が、Palmuで証明したい唯一無二のプライド。
-      </p>
-    </div>
-  </div>
-</section>
-
-<div class="story-stream">
-
-  <section class="story-episode">
-    <div class="container">
-      <div class="episode-card">
-        <span class="episode-num">CHAPTER 01</span>
-        <h3>原点：19歳で出会った世界と<br>たった一つの譲れない願い</h3>
-        <div class="episode-body">
-          <p>僕は昔から、配信が大好きです。<br>19歳でこの世界に出会ってから、気付けば<br>11年以上の月日が流れていました。<br>ただの配信オタクです。</p>
-          <p>まだ「投げ銭」なんて文化すら存在しなかった時代から画面の向こう側を見てきたし、<br>配信が純粋な趣味だった時代も、それが仕事になった時代も知っています。</p>
-          <p>酸いも甘いも噛み分けてきたからこそ、<br>今、僕にはひとつだけ絶対に譲れない考えがあります。</p>
-          <p class="highlight">「エンタメで評価されたい」</p>
-          <p>それが, 僕のすべての原点です。</p>
-          <p>配信の世界には、色んな勝ち方があります。<br>トークが抜群に上手い人、胸を打つ歌が歌える人、容姿の美しさで人気を集める人、<br>あるいはリスナーとの巧みな距離感で応援される人。</p>
-          <p>どれも素敵な才能ですが、僕が昔から一番価値を感じてきたのは、そこではありません。<br>視聴者から「最高に面白かった」「また絶対に見たい」「配信そのものが楽しかった」、そう言われる瞬間にこそ、僕の全存在意義があります。</p>
-        </div>
+  <!-- HERO: バックグラウンド透かし画像配置 -->
+  <section class="kaicho-hero">
+    <img src="images/talent.png" alt="会長" class="hero-bg-person-dark" id="js-hero-person">
+    <div class="container text-center">
+      <div class="kaicho-tag">GEMARIS ORIGINAL DOCUMENTARY</div>
+      <h1>
+        「エンタメ一本で、<br>いつか覇権を獲る」
+        <span>配信歴11年の男がPalmuで証明したいプライド。</span>
+      </h1>
+      <div class="credit" style="color: #888;">
+        <span class="speaker" style="color: #fff; font-weight: 700; margin-right: 15px;">SPEAKER : 会長</span>
+        <span class="date">2026.06.15</span>
       </div>
     </div>
   </section>
 
-  <section class="story-episode">
-    <div class="container">
-      <div class="episode-card">
-        <span class="episode-num">CHAPTER 02</span>
-        <h3>なぜ、舞台に「Palmu」を選んだのか</h3>
-        <div class="episode-body">
-          <p>今の時代、すでに圧倒的な知名度を持つ<br>配信者やインフルエンサーと同じ土俵で戦っても、正面突破で勝つのは容易ではありません。</p>
-          <p>だったら、自分の強みを最大限に発揮できる場所で勝負したい。<br>そう考えたとき、雑談枠や歌枠が主流である「Palmu」なら、まだ誰も見たことがない<br>圧倒的なエンタメ空間を作れると確信したんです。</p>
-          <p>僕が目指すのは、「スマホ一台の向こう側に、テーマパークみたいな時間を作ること」。<br>日常を忘れ、リスナーに極上の非日常を体験してもらうこと。<br>それが、僕の掲げる配信の理想郷です。</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main class="interview-container container" style="max-width: 800px; margin: 0 auto; padding-bottom: 100px;">
 
-  <section class="story-episode">
-    <div class="container">
-      <div class="episode-card">
-        <span class="episode-num">CHAPTER 03</span>
-        <h3>ギフトは目的ではない。圧倒的な満足度の結果だ</h3>
-        <div class="episode-body">
-          <p>もちろん、リスナーに応援してもらえるのは最高に嬉しい。<br>でもその応援（ギフト）は、言葉で煽って無理やり引き出すものではなく、「面白かった」「応援したい」「また来たい」と心から思った『結果』であってほしいんです。</p>
+   <div class="kaicho-stream">
+
+      <article class="interview-row" style="margin-bottom: 60px;">
+        <div class="question">
+          <h2><span>Q.01</span>これまでの配信経歴と、Palmuを選んだ理由<small>11年の歴史と、たどり着いた新天地</small></h2>
+        </div>
+        <div class="answer">
+          <p>配信自体は、もう11年くらい続けています。</p>
+          <p>ツイキャス、17LIVE、Pococha。</p>
+          <p>その中でPalmuを選んだ理由は、「エンタメ配信」で上を目指せる環境があったからです。</p>
+          <p>他の配信アプリって、現役のアイドルやインフルエンサーが市場を独占してて勝てるビジョンがなかったんです。でもPalmuは、純粋な「トークの面白さ」や「企画力」といった、配信者としての実力がしっかり評価される空気感がある。</p>
+          <p>11年配信をやってきた人間として、「自分のエンタメがどこまで通用するのか」をもう一度証明したくて、Palmuに参入することを決めました。</p>
+      </div>
+      </article>
+
+      <article class="interview-row" style="margin-bottom: 60px;">
+        <div class="question">
+          <h2><span>Q.02</span>配信において最も大切にしている「美学」<small>言葉で無理やり引き出さない、純粋な感動の対価</small></h2>
+        </div>
+        <div class="answer">
+          <p>もちろん、リスナーに応援してもらえるのは最高に嬉しいです。</p>
+          <p>でもその応援（ギフト）は、言葉で煽って無理やり引き出すものではなく、「面白かった」「応援したい」「また来たい」と心から思った『結果』であってほしいんです。</p>
           <p>配信者として本当に勝負するべきなのは、安易な言葉ではなく、どこまでも「配信の中身」そのもの。</p>
-          <p>圧倒的なエンタメでリスナーを魅了し、自然と課金ボタンに手が伸びる状態を作ること。<br>枠のクオリティそのものに価値を感じ、自ら応援したくなるサイクルを生み出すこと。</p>
+          <p>圧倒的なエンタメでリスナーを魅了し、自然と課金ボタンに手が伸びる状態を作ること。枠のクオリティそのものに価値を感じ、自ら応援したくなるサイクルを生み出すこと。</p>
           <p>泥臭いかもしれませんが、これこそが僕の理想とする配信のあり方です。</p>
         </div>
-      </div>
-    </div>
-  </section>
+      </article>
 
-  <section class="story-episode">
-    <div class="container">
-      <div class="episode-card">
-        <span class="episode-num">CHAPTER 04</span>
-        <h3>エンタメへの執念：遠回りでも、この道しか歩めない</h3>
-        <div class="episode-body">
-          <p>正直に言います。もっと効率の良い、コスパのいい伸び方はいくらでもあります。<br> それでも僕は昔からエンタメが好きでした。<br>というより、たぶん僕にはエンタメしか<br>できないんです。</p>
-          <p>リスナーとの距離感の近さで応援されるより、ただ一言「面白かった」と言われる方が、脳汁が出るほど嬉しい。<br>だから結局、僕は今日も執念深く仕掛けを<br>作り込んでしまいます。</p>
-          
-          <ul class="gimmick-list">
-            <li>天井に穴を開けてタライを設置するギミック</li>
-            <li>月替わりで追加する、こだわりの音源加工素材</li>
-            <li>1コメの狂いも許さないOBSホットキー設定</li>
-            <li>映画のような余韻を残すエンドロール演出</li>
-            <li>躍動感のあるギフトリアクション</li>
-            <li>緻密なスケジュール管理と、開始から終了までの完璧な構成・演出</li>
-          </ul>
-
-          <p>側（がわ）から見れば、ものすごく遠回りに見えるかもしれません。<br>だけど、この工作を惜しまない時間、演出を考えている時間こそが、僕の配信スタイルそのものんです。</p>
+      <article class="interview-row" style="margin-bottom: 60px;">
+        <div class="question">
+          <h2><span>Q.03</span>裏側の圧倒的な仕込みと、こだわり<small>エンタメしかできない男の泥臭い執念</small></h2>
         </div>
-      </div>
-    </div>
-  </section>
+        <div class="answer">
+          <p>正直に言います。枠回りをしたり、ノーギフ日やメーター日を作ったり。もっと、コスパのいい伸び方はいくらでもあります。</p>
+          <p>それでも僕は昔からエンタメが好きでした。というより、たぶん僕にはエンタメしかできないんです。</p>
 
-  <section class="story-episode">
-    <div class="container">
-      <div class="episode-card">
-        <span class="episode-num">CHAPTER 05</span>
-        <h3>覚悟：エンタメだけでも頂点へ行けることの証明</h3>
-        <div class="episode-body">
-          <p>僕はこれからも、小細工なしのエンタメだけで勝負します。<br>そしていつか、Palmuでマンスリー1位を獲ります。</p>
-          <div class="credo-box">
-            <p>「エンタメだけでも勝てる」</p>
-            <p>「リス活（枠回り）なんてしなくていい」</p>
+          <div class="tech-list">
+            <ul>
+              <li>月替わりで追加する、こだわりの音源加工素材</li>
+              <li>1コメの狂いも許さないOBSホットキー設定</li>
+              <li>映画のような余韻を残すエンドロール演出</li>
+              <li>躍動感のあるギフトリアクション</li>
+              <li>緻密なスケジュール管理と、開始から終了までの完璧な構成・演出</li>
+            </ul>
+          </div>
+
+          <p>この工作を惜しまない時間、演出を考えている時間こそが、僕の配信スタイルそのものです。</p>
+        </div>
+      </article>
+
+      <article class="interview-row" style="margin-bottom: 60px;">
+        <div class="question">
+          <h2><span>Q.04</span>事務所「Gemaris」での挑戦と、次世代への想い<small>「配信の力だけでも人は魅了できる」を証明する</small></h2>
+        </div>
+        <div class="answer">
+          <div class="quote-box">
             <p>「純粋な配信力だけでも、人はここまで魅了できる」</p>
           </div>
-          <p>それを、僕自身が結果で証明したい。<br>そして、その泥臭くも圧倒的な背中を見て、「自分もあんな風に、配信の力で勝負してみたい！」と思ってくれる次世代のライバーが一人でも増えたなら、これ以上幸せなことはありません。</p>
+
+          <p>それを、僕自身が結果で証明したい。</p>
+          <p>そして、その泥臭くも圧倒的な背中を見て、「自分もあんな風に、配信の力で勝負してみたい！」と思ってくれる次世代のライバーが一人でも増えたなら、これ以上幸せなことはありません。</p>
           <p>それこそが、僕が今、この場所で配信を続ける理由です。</p>
         </div>
+      </article>
+
+    </div>
+
+    <!-- 他ストーリーへの回遊リンク -->
+    <section class="next-story-section" style="padding: 60px 0 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); background: #141414; margin-top: 60px; border-radius: 8px;">
+      <div class="container">
+        <p style="color: #e50914; font-weight: 700; letter-spacing: 0.2em; font-size: 0.85rem; margin-bottom: 10px;">ANOTHER STORY</p>
+        <h3 style="font-family: 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 900; color: #fff; margin: 0 0 25px; line-height: 1.5;">
+          「スマホ1つで世界を変える。」<br>泥臭く、美しく、リスナーと<br>「奇跡のコミュニティ」を創り出す<br>TOPライバーの思考法。
+        </h3>
+        <a href="story-risa.html" class="next-story-btn" style="
+          display: inline-block;
+          padding: 12px 32px;
+          border: 1px solid #fff;
+          color: #fff;
+          text-decoration: none;
+          font-size: 0.9rem;
+          font-weight: 700;
+          border-radius: 4px;
+          transition: all 0.3s ease;
+          background: transparent;
+        " onmouseover="this.style.background='#fff'; this.style.color='#000'" 
+           onmouseout="this.style.background='transparent'; this.style.color='#fff'">
+          RISAのストーリーを読む →
+        </a>
       </div>
+    </section>
+
+  </main>
+
+  <section class="kaicho-cta">
+    <div class="container">
+      <h2>この思想に、共感しますか？</h2>
+      <p class="cta-lead" style="color: #aaa; margin-bottom: 30px;">ただの配信ではなく、“表現”として戦う世界へ。</p>
+      <a href="apply.html?job=driver" class="netflix-btn">オーディションに応募する</a>
     </div>
   </section>
 
-</div>
-<section class="next-story-section" style="padding: 60px 0 20px; text-align: center;">
-  <div class="container">
-    <p style="color: var(--net-red); font-weight: 700; letter-spacing: 0.2em; font-size: 0.85rem; margin-bottom: 10px;">ANOTHER STORY</p>
-    <h3 style="font-family: 'Noto Serif JP', serif; font-size: 1.6rem; font-weight: 900; color: #fff; margin: 0 0 25px;">
-      「ただの配信ではなく、<br>“表現”として戦う」<br>TOPライバーが語る<br>もう一つの思想。
-    </h3>
-    <a href="story-risa.html" class="next-story-btn" style="
-      display: inline-block;
-      padding: 14px 36px;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: #fff;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-      background: rgba(255, 255, 255, 0.03);
-    " onmouseover="this.style.background='#fff'; this.style.color='#08080a'; this.style.borderColor='#fff'" 
-       onmouseout="this.style.background='rgba(255, 255, 255, 0.03)'; this.style.color='#fff'; this.style.borderColor='rgba(255, 255, 255, 0.4)'">
-      インタビューを読む →
-    </a>
-  </div>
-</section>
-<section class="section cta-section">
-  <div class="container">
-    <h2>あなたは、何で<br>勝負しますか？</h2>
-    <p class="section-lead">答えはまだ決まっていなくていい</p>
-    <div class="cta-actions">
-      <a href="apply.html?job=driver" class="button apply-button">オーディションに応募する</a>
+  <footer class="footer" style="background: #080808; padding: 40px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <div class="footer-sub-links" style="text-align: center; margin-bottom: 15px;">
+        <a href="company.html" style="font-size: 0.75rem; color: #666; text-decoration: none; margin: 0 10px;">会社概要</a>
+        <a href="privacy.html" style="font-size: 0.75rem; color: #666; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
+      </div>
+      <p style="color: rgba(255,255,255,0.3); font-size: 0.8rem; margin: 0;">&copy; 2026 Gemaris LLC. All Rights Reserved.</p>
     </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-sub-links" style="text-align: center; margin-bottom: 15px;">
-      <a href="company.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">会社概要</a>
-      <a href="privacy.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
-    </div>
-    <p>© 2026 Gemaris LLC</p>
-  </div>
-</footer>
+  </footer>
 
 <script>
     const hamburger = document.getElementById('js-hamburger');
     const navMenu = document.getElementById('js-nav-menu');
     const header = document.querySelector('.header');
+    const heroPerson = document.getElementById('js-hero-person');
+    const netflixCard = document.getElementById('js-netflix-card');
 
-    // --- ① ハンバーガーメニューの開閉（完全連動＆文字色視認性確保） ---
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('is-active');
@@ -299,21 +424,42 @@
         if (hamburger) hamburger.classList.remove('is-active');
     });
 
-    // --- ② スマートヘッダー（スクロールで出没） ---
     let lastScrollY = window.scrollY;
 
     window.addEventListener('scroll', () => {
-        // スマホメニューが開いている時はヘッダーを隠さない
-        if (navMenu && navMenu.classList.contains('is-active')) return;
+        const scrolled = window.scrollY;
 
-        if (window.scrollY > lastScrollY && window.scrollY > 150) {
-            // ページダウンで隠す
-            header.classList.add('is-hide');
-        } else {
-            // ページアップで復活
-            header.classList.remove('is-hide');
+        // スマートヘッダー
+        if (navMenu && !navMenu.classList.contains('is-active')) {
+            if (scrolled > lastScrollY && scrolled > 150) {
+                header.classList.add('is-hide');
+            } else {
+                header.classList.remove('is-hide');
+            }
         }
-        lastScrollY = window.scrollY;
+        lastScrollY = scrolled;
+
+        // 背景透かし パララックス
+        if (heroPerson && scrolled < 600) {
+            heroPerson.style.transform = `translate(-50%, ${scrolled * 0.15}px)`;
+        }
+
+        // ネトフリカード フェードイン
+        if (netflixCard) {
+            const cardRect = netflixCard.getBoundingClientRect();
+            if (cardRect.top < window.innerHeight * 0.85) {
+                netflixCard.classList.add('is-visible');
+            }
+        }
+    });
+
+    window.addEventListener('load', () => {
+        if (netflixCard) {
+            const cardRect = netflixCard.getBoundingClientRect();
+            if (cardRect.top < window.innerHeight * 0.85) {
+                netflixCard.classList.add('is-visible');
+            }
+        }
     });
 </script>
 </body>
