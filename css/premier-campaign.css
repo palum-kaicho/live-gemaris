@@ -433,3 +433,57 @@ body {
     border: 1px solid var(--border);
     text-align: center;
 }
+
+@charset "UTF-8";
+
+/* ==========================================================================
+   画像LP用レイアウト設定
+   ========================================================================== */
+
+.main-campaign-lp {
+    width: 100%;
+    background-color: #fcf8f2; /* 画像の背景色に合わせたトーン（違和感防止） */
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.lp-container {
+    max-width: 800px; /* 画像の可読性を保つ最大幅設定 */
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lp-item {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0; /* 画像上下の不要な隙間（白線）を徹底排除 */
+}
+
+.lp-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: bottom;
+}
+
+/* お問い合わせバナーのアニメーションと装飾 */
+.lp-cta-link {
+    display: block;
+    width: 100%;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.lp-cta-link:hover {
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+
+/* イメージマップ用のリンク表示設定 */
+.map-link {
+    cursor: pointer;
+    outline: none;
+}
