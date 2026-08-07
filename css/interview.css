@@ -369,3 +369,98 @@ body.page-interview {
     margin-bottom: 20px;
   }
 }
+/* 既存の css/interview.css の末尾に追加、または該当箇所を差し替え */
+
+/* =========================================
+   HERO (切り抜き人物＋マガジン風レイアウト)
+========================================= */
+.interview-hero {
+  padding-top: 160px;
+  padding-bottom: 60px;
+  text-align: center;
+  border-bottom: 1px solid var(--mag-black);
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 20%, rgba(169, 24, 42, 0.05) 0%, transparent 70%);
+}
+
+/* HERO背景のうっすら浮かぶ人物シルエット */
+.hero-bg-person-mag {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  opacity: 0.12; /* 雑誌風に上品に薄く配置 */
+  filter: grayscale(30%) contrast(1.1);
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 0.1s ease-out;
+}
+
+.interview-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   EDITORIAL PORTRAIT CARD (切り抜きメインビジュアル)
+========================================= */
+.magazine-portrait-card {
+  max-width: 500px;
+  margin: 0 auto 70px;
+  position: relative;
+  background: #fff;
+  padding: 24px 24px 16px;
+  border: 1px solid var(--mag-border);
+  box-shadow: 0 15px 35px rgba(26, 25, 23, 0.06);
+
+  /* JS用アニメーション初期状態 */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.magazine-portrait-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portrait-img-wrapper {
+  position: relative;
+  background: linear-gradient(180deg, #f1efe9 0%, #e5e2d9 100%);
+  border-radius: 2px;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.portrait-img-wrapper img {
+  width: 88%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 15px rgba(26, 25, 23, 0.15));
+}
+
+.portrait-caption {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--mag-gray);
+  letter-spacing: 0.1em;
+  border-top: 1px dashed var(--mag-border);
+  padding-top: 12px;
+}
+
+.portrait-caption .vol {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  color: var(--mag-accent);
+  font-size: 0.95rem;
+}
