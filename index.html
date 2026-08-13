@@ -3,30 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gemaris（ジェマリス）公式</title>
+  <title>Gemaris - Palmuライバー事務所</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/index.css">
-  <style>
-    /* 固定ヘッダーの干渉を確実に防いで最前面に出すスタイル */
-    .index-support-plans-section {
-      position: relative;
-      z-index: 50 !important; 
-    }
-    .comb-banner-wrap {
-      position: relative;
-      z-index: 51 !important;
-    }
-    map area {
-      cursor: pointer;
-      display: inline-block;
-    }
-  </style>
 </head>
-<body class="gemaris-theme">
+<body>
 
+  <!-- キラキラ・エフェクト背景 -->
+  <div class="sparkles-container" id="js-sparkles"></div>
+
+  <!-- ヘッダー -->
   <header class="header">
     <div class="container header-inner">
-      <a href="index.html">
+      <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gemaris Logo" class="logo">
       </a>
       <button class="hamburger" id="js-hamburger" aria-label="メニューを開く">
@@ -35,145 +29,237 @@
         <span></span>
       </button>
       <nav class="nav-menu" id="js-nav-menu">
-        <a href="index.html">TOP</a>
-        <a href="index.html#plans">サポート・プラン</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#recruit-teaser">リクルート</a>
-        <a href="index.html#story-section">インタビュー</a>
-        <a href="index.html#staff-teaser">スタッフ</a>
-        <a href="apply.html" class="apply-btn">応募はこちら</a>
+        <ul class="nav-list">
+          <li><a href="#top" class="nav-link">TOP</a></li>
+          <li><a href="#palmu" class="nav-link">Palmu紹介</a></li>
+          <li><a href="#plan" class="nav-link">契約プラン</a></li>
+          <li><a href="#campaign" class="nav-link">キャンペーン</a></li>
+          <li><a href="#interview" class="nav-link">ライバーインタビュー</a></li>
+          <li><a href="#apply" class="nav-link btn-nav-cta pulse-anim">応募はこちら</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <section class="top-hero-section" style="position: relative; overflow: hidden;">
-    <div class="container wide-bleed-container">
-      <div class="top-img-container visual-overlay-wrapper">
-        <img src="images/TOP.png" alt="あなたの中の原石を、最高の輝きへ。" class="top-main-img" style="width: 100%; height: auto; display: block;">
-        <a href="apply.html" class="map-replacement-link link-apply" title="応募はこちら"></a>
-        <a href="https://discord.gg/XXXXXXXX" target="_blank" class="map-replacement-link link-discord" title="Discordに参加する"></a>
+  <main>
+    <!-- TOP Section -->
+    <section id="top" class="hero-section">
+      <div class="hero-bg">
+        <img src="images/TOP.png" alt="Gemaris TOP Background" class="hero-img float-anim">
       </div>
-    </div>
-  </section>
-
-  <section class="section index-support-plans-section" id="plans" style="padding: 60px 0 40px 0; background: transparent; position: relative; overflow: hidden;">
-    <div class="container wide-bleed-container">
-      <div class="comb-banner-wrap">
-        <img src="images/index-support.png" alt="充実の活動支援と選べる2つの契約プラン" class="comb-img-map-target" usemap="#index-comb-map" id="js-index-comb-img" style="width: 100%; height: auto; display: block; border: none; position: relative; z-index: 52;">
-        
-        <map name="index-comb-map" id="index-comb-map">
-          <area shape="rect" coords="90,1070,1035,1210" href="support.html" alt="サポート・支援制度の詳細を見る" class="map-link">
-          <area shape="rect" coords="90,2220,1035,2380" href="plan.html" alt="プランの詳細を見る" class="map-link">
-        </map>
-      </div>
-    </div>
-  </section>
-
-<!-- ==========================================================================
-     Palmuライバー限定特別キャンペーンセクション
-     ========================================================================== -->
-<!-- ==========================================================================
-     Palmuライバー限定特別キャンペーンセクション（画像差し替え版）
-     ========================================================================== -->
-<section class="section index-palmu-campaign-section" id="palmu-campaign" style="padding: 40px 0; background: transparent; position: relative; overflow: hidden;">
-  <div class="container wide-bleed-container">
-    <div class="palmu-banner-wrap" style="position: relative; width: 100%; margin: 0 auto;">
-      
-      <!-- バナー画像 -->
-      <img src="images/index-bonus.png" alt="Palmuライバー限定 特別キャンペーン" class="palmu-img-map-target" usemap="#index-palmu-map" id="js-index-palmu-img" style="width: 100%; height: auto; display: block; border: none;">
-      
-      <!-- クリッカブルマップ（ボタンのタップ領域） -->
-      <map name="index-palmu-map" id="index-palmu-map">
-        <!-- キャンペーン詳細を見る（新規ライバー対象） -->
-        <area shape="rect" coords="120,1350,1005,1470" href="palmu-bonus.html" alt="キャンペーン詳細を見る" class="map-link">
-        
-        <!-- プレミア特典を見る（他アプリ実績者対象） -->
-        <area shape="rect" coords="120,2045,1005,2165" href="premier-campaign.html" alt="プレミア特典を見る" class="map-link">
-        
-        <!-- お問い合わせはこちら -->
-        <area shape="rect" coords="155,2290,970,2400" href="apply.html" alt="お問い合わせはこちら" class="map-link">
-      </map>
-
-    </div>
-  </div>
-</section>
-
-  <section class="section index-faq-section" id="faq" style="padding: 40px 0; background: transparent; position: relative; overflow: hidden;">
-    <div class="container wide-bleed-container">
-      <div class="apply-banner-wrap">
-        <img src="images/index-qa.png" alt="FAQ よくある質問" style="width: 100%; height: auto; display: block; border: none;">
-        <a href="faq.html" class="apply-invisible-link link-faq-more" style="width: 76%; height: 5.6%; left: 12%; top: 91.3%;" aria-label="その他のよくある質問を見る"></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section index-recruit-teaser-section" style="padding: 40px 0; background: transparent; position: relative; overflow: hidden;">
-    <div class="container wide-bleed-container">
-      <div class="main-content-card" id="recruit-teaser" style="padding: 0; background: transparent; box-shadow: none;">
-        <div class="recruit-banner-wrap">
-          <img src="images/recruit.png" alt="Gemaris ライバー募集 WANTED（募集要項・詳細を見る）" class="recruit-img-map-target" usemap="#index-recruit-map" id="js-index-recruit-img" style="width: 100%; height: auto; display: block; border: none;">
-          <map name="index-recruit-map">
-            <area shape="rect" coords="145,2170,980,2330" href="recruit.html" alt="募集要項・詳細を見る" class="map-link">
-          </map>
+      <div class="hero-overlay">
+        <div class="container">
+          <p class="hero-subtext js-slide-left">Palmuライバーとして<br><span class="highlight-pink">一緒にデビューしませんか？</span></p>
+          <h1 class="hero-title js-slide-left delay-1">
+            業界<span class="text-gradient">NO.1</span>の<br>還元率と<br>サポート！
+          </h1>
+          <div class="js-slide-left delay-2">
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section story-section" style="padding: 60px 0; background-color: #faf7f2; position: relative; overflow: hidden;">
-    <div id="story-section" style="position: absolute; top: -80px; left: 0;"></div>
-    <div class="container wide-bleed-container">
-      
-      <div class="story-image-wrapper-main" style="position: relative; width: 100%; margin: 0 auto;">
-        <img src="images/index-story.png" alt="所属ライバーの思想" style="width: 100%; height: auto; display: block;">
-        
-        <a href="story-kaicho.html" class="story-invisible-link link-kaicho" style="position: absolute; display: block; width: 90%; height: 27%; left: 5%; top: 29.5%; background: rgba(255, 255, 255, 0); z-index: 10; cursor: pointer;" aria-label="エンタメだけで頂点を狙う男の哲学 STORYを読む"></a>
-        
-        <a href="story-risa.html" class="story-invisible-link link-risa" style="position: absolute; display: block; width: 90%; height: 27%; left: 5%; top: 59.5%; background: rgba(255, 255, 255, 0); z-index: 10; cursor: pointer;" aria-label="スマホ1つで世界を変える思考法 STORYを読む"></a>
+    <!-- Palmu紹介 Section -->
+    <section id="palmu" class="section palmu-section">
+      <div class="container">
+        <div class="palmu-logo-wrapper js-slide-left">
+          <img src="images/index-palmulogo.png" alt="Palmu Logo" class="palmu-logo pulse-soft">
+        </div>
+
+        <div class="palmu-cards">
+          <div class="image-card js-slide-left delay-1 hover-zoom">
+            <img src="images/index-palmu-girl.png" alt="Palmu Girl" class="card-bg-img">
+            <div class="card-overlay">
+              <p class="card-text text-pop">好きなことを配信して<br><span class="text-yellow">新しいつながりを。</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-lg js-slide-left">
+          <a href="https://palmu.jp/home#fv" target="_blank" rel="noopener noreferrer" class="btn btn-outline glow-btn">Palmu公式サイトを見る</a>
+        </div>
       </div>
+    </section>
 
-      <div class="story-image-wrapper-cta" style="position: relative; width: 100%; margin: 0 auto;">
-        <a href="apply.html" style="display: block; text-decoration: none; cursor: pointer;" aria-label="あなたの番です 未来を変える">
-          <img src="images/index-stor2y.png" alt="あなたの番です。次にストーリーを書くのはあなたかもしれない。" style="width: 100%; height: auto; display: block; box-shadow: 0 10px 30px rgba(215, 201, 182, 0.3); transition: transform 0.2s ease;">
-        </a>
+    <!-- 契約プラン Section -->
+    <section id="plan" class="section plan-section">
+      <div class="container">
+        <h2 class="section-title js-slide-left"><span class="title-sparkle">契約プラン</span></h2>
+        <p class="section-lead js-slide-left">ライバーの活動スタイルに合わせて<br>2つのプランを用意しています！</p>
+
+        <div class="plan-grid">
+          <!-- セルフプロ契約 -->
+          <div class="plan-card js-slide-left">
+            <span class="plan-badge">高還元率</span>
+            <h3 class="plan-name">セルフプロ契約</h3>
+            <div class="plan-return">
+              <span class="return-label">還元率</span>
+              <span class="return-val text-bounce">100％〜120％</span>
+            </div>
+            <p class="plan-sub">キャンペーン報酬フルバック！</p>
+            <p class="plan-desc">配信経験者・自走できる方向けの<br>高還元率プラン</p>
+            
+            <div class="video-container">
+              <video src="videos/セルフプロ.MP4" autoplay muted playsinline preload="metadata"></video>
+            </div>
+
+            <a href="plan.html" class="btn btn-secondary">プランの解説・詳細を見る &rarr;</a>
+          </div>
+
+          <!-- フルサポート契約 -->
+          <div class="plan-card plan-featured js-slide-left delay-1">
+            <span class="plan-badge primary pulse-anim">イチオシ！</span>
+            <h3 class="plan-name">フルサポート契約</h3>
+            <div class="plan-return">
+              <span class="return-label">還元率</span>
+              <span class="return-val text-bounce">100％</span>
+            </div>
+            <p class="plan-desc">配信環境が整っていない方向けの<br>サポート特化プラン！</p>
+
+<!-- フルサポート契約のサポート内容部分 -->
+            <div class="support-features">
+              <div class="feature-item js-slide-left">
+                <span class="feature-tag">機材貸与</span>
+                <p class="feature-text">YAMAHA AG-01 & 音源用ノートPC<br><strong>2か月間無償貸与</strong></p>
+              </div>
+              <div class="feature-item js-slide-left delay-1">
+                <span class="feature-tag">活動補助</span>
+                <p class="feature-text">企画・ギフトリアクション用<br><strong>備品の経費補助</strong></p>
+              </div>
+              <div class="feature-item js-slide-left delay-2">
+                <span class="feature-tag">グッズ展開</span>
+                <p class="feature-text">オリジナルTシャツ・アクスタ等<br><strong>グッズ制作サポート</strong></p>
+              </div>
+              <div class="feature-item js-slide-left delay-3">
+                <span class="feature-tag">SNS運用</span>
+                <p class="feature-text">アプリ外での認知拡大を図る<br><strong>SNSプロデュース</strong></p>
+              </div>
+            </div>
+
+            <div class="video-container">
+              <video src="videos/フルサポート.MP4" autoplay muted playsinline preload="metadata"></video>
+            </div>
+
+            <a href="support.html" class="btn btn-secondary">フルサポートの詳細を見る &rarr;</a>
+          </div>
+        </div>
+
+        <div class="simulation-banner js-slide-left">
+          <p class="sim-title">「実際にどれくらい<br>稼げる？」<br><span class="text-pink">気になったらココから<br>チェック！</span></p>
+          <a href="simulation.html" class="btn btn-accent pulse-anim">報酬シミュレーション</a>
+        </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- キャンペーン Section -->
+    <section id="campaign" class="section campaign-section">
+      <div class="container">
+        <div class="campaign-header js-slide-left">
+          <span class="sub-heading">SPECIAL CAMPAIGN</span>
+          <h2 class="section-title text-white">スタートダッシュ特典</h2>
+          <p class="campaign-lead">
+            GemarisではPalmuで配信を開始するライバー様を対象に、<br>
+            スタートダッシュを強力にバックアップする特別報酬をご用意しています！
+          </p>
+        </div>
 
-  <section class="section staff-teaser" style="padding: 40px 0; background: transparent; position: relative; overflow: hidden;">
-    <div id="staff-teaser" style="position: absolute; top: -80px; left: 0;"></div>
-    <div class="container wide-bleed-container">
-      <div class="staff-banner-wrap">
-        <img src="images/staff.png" alt="支える人を知ることが、安心につながる。運営スタッフ紹介を見る" class="staff-img-map-target" usemap="#index-staff-map" id="js-index-staff-img" style="width: 100%; height: auto; display: block; border: none;">
-        <map name="index-staff-map">
-          <area shape="rect" coords="110,2170,1015,2330" href="staff.html" alt="スタッフ紹介を見る" class="map-link">
-        </map>
+        <div class="campaign-list">
+          <!-- 新規ライバー対象 -->
+          <div class="campaign-card js-slide-left">
+            <span class="campaign-tag">新規ライバー対象</span>
+            <h3 class="campaign-title">キャンペーン報酬</h3>
+            <p class="campaign-desc">
+              初配信からランク達成や<br>継続配信で<br>
+              <strong class="highlight-gold">最大19万5千円</strong>の<br>豪華ボーナス！<br>
+              <small>（U18は最大24万5千円）</small>
+            </p>
+            <a href="palmu-bonus.html" class="btn btn-outline-white">詳細はこちら</a>
+          </div>
+
+          <!-- 他アプリ実績者対象 -->
+          <div class="campaign-card featured js-slide-left delay-1">
+            <div class="tags">
+              <span class="campaign-tag">他アプリ<br>実績者対象</span>
+              <span class="campaign-tag highlight pulse-anim">経験者優遇</span>
+            </div>
+            <h3 class="campaign-title">プレミアスタート<br>キャンペーン</h3>
+            <p class="campaign-highlight-text">B1ランクスタートや月給保証制度、圧倒的優遇プログラムを用意！</p>
+            <p class="campaign-desc">
+              初配信からランク達成や継続配信で<br>
+              <strong class="highlight-gold">最大35万円</strong>の豪華ボーナス！<br>
+              <small>（U18は最大40万円）</small>
+            </p>
+            <a href="premier-campaign.html" class="btn btn-accent bounce-anim">詳細はこちら</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section index-combined-apply-section" id="cta-links" style="padding: 40px 0; background: transparent; position: relative; overflow: hidden;">
-    <div class="container wide-bleed-container">
-      <div class="apply-banner-wrap">
-        <img src="images/index-apply.png" alt="まずはDiscordへ / あなたの挑戦を待っています" style="width: 100%; height: auto; display: block; border: none;">
-        
-        <a href="https://discord.gg/XXXXXXXX" target="_blank" class="apply-invisible-link link-discord" style="position: absolute; display: block; width: 76%; height: 5.6%; left: 12%; top: 27.7%; background: transparent; z-index: 100 !important; cursor: pointer; -webkit-tap-highlight-color: rgba(0,0,0,0);" aria-label="Discordで相談する"></a>
-        
-        <a href="apply.html?job=driver" class="apply-invisible-link link-driver" style="position: absolute; display: block; width: 76%; height: 5.6%; left: 12%; top: 66.4%; background: transparent; z-index: 100 !important; cursor: pointer; -webkit-tap-highlight-color: rgba(0,0,0,0);" aria-label="ライバー応募"></a>
-        
-        <a href="apply.html?job=manager" class="apply-invisible-link link-manager" style="position: absolute; display: block; width: 76%; height: 5.6%; left: 12%; top: 74.5%; background: transparent; z-index: 100 !important; cursor: pointer; -webkit-tap-highlight-color: rgba(0,0,0,0);" aria-label="マネージャー応募"></a>
-        
-        <a href="apply.html?job=scout" class="apply-invisible-link link-scout" style="position: absolute; display: block; width: 76%; height: 5.6%; left: 12%; top: 82.6%; background: transparent; z-index: 100 !important; cursor: pointer; -webkit-tap-highlight-color: rgba(0,0,0,0);" aria-label="スカウト応募"></a>
+    <!-- 所属ライバーインタビュー Section -->
+    <section id="interview" class="section interview-section">
+      <div class="container">
+        <h2 class="section-title js-slide-left">所属ライバーの<br>思想</h2>
+        <p class="section-lead js-slide-left">～なぜ彼らは、エンタメの最前線に<br>立ち続けるのか～</p>
+
+        <div class="interview-list">
+          <!-- INTERVIEW 01 -->
+          <div class="story-card js-slide-left hover-zoom">
+            <div class="story-img-wrapper">
+              <img src="images/index-kaichostory.png" alt="INTERVIEW 01" class="story-img">
+              <div class="story-overlay">
+                <span class="story-num">INTERVIEW 01</span>
+                <h3 class="story-title">エンタメ一本で<br>頂点を狙う男の哲学</h3>
+                <p class="story-desc">
+                  常にリスナーと向き合い、全力で楽しませることを信条に活動するライバー。その裏側にある強い想いと、挑戦し続ける姿勢に迫ります。
+                </p>
+                <a href="story-kaicho.html" class="btn-text">STORYを読む &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- INTERVIEW 02 -->
+          <div class="story-card js-slide-left delay-1 hover-zoom">
+            <div class="story-img-wrapper">
+              <img src="images/index-risastory.png" alt="INTERVIEW 02" class="story-img">
+              <div class="story-overlay">
+                <span class="story-num">INTERVIEW 02</span>
+                <h3 class="story-title">スマホ1つで<br>世界を変える思考法</h3>
+                <p class="story-desc">
+                  スマホだけで多くの人を魅了するライバー。発信の工夫や、夢を叶えるまでの道のり、そして未来へのビジョンを語ります。
+                </p>
+                <a href="story-risa.html" class="btn-text">STORYを読む &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- 応募フォーム誘導 Section -->
+    <section id="apply" class="section cta-section">
+      <div class="container">
+        <h2 class="cta-title js-slide-left">夢への第一歩を踏み出そう</h2>
+        <p class="cta-desc js-slide-left">ご質問・ご相談もお気軽にお問い合わせください！</p>
+        
+        <div class="cta-buttons js-slide-left delay-1">
+          <a href="apply.html" class="btn btn-apply pulse-anim">
+            <span class="btn-sub">Webからのお申し込み</span>
+            <span class="btn-main">応募フォーム</span>
+          </a>
+          <a href="https://公式ラインのリンク" target="_blank" rel="noopener noreferrer" class="btn btn-line bounce-anim">
+            <span class="btn-sub">LINEで気軽に相談</span>
+            <span class="btn-main">公式LINE</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       統一フッターセクション（html個別指定版）
+       ========================================== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo">
-        <img src="images/image(24).png" alt="Gemaris">
-      </div>
       <div class="footer-links">
         <a href="index.html">TOP</a>
         <a href="support.html">サポート</a>
@@ -182,156 +268,19 @@
         <a href="staff.html">スタッフ紹介</a>
         <a href="apply.html">応募</a>
       </div>
+
       <div class="footer-sub-links" style="text-align: center; margin-top: 15px; margin-bottom: 15px;">
         <a href="company.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">会社概要</a>
         <a href="privacy.html" style="font-size: 0.75rem; color: #888888; text-decoration: none; margin: 0 10px;">プライバシーポリシー</a>
       </div>
-      <p class="copyright">© 2026 Gemaris LLC. All Rights Reserved.</p>
+
+      <p class="copyright">&copy; 2026 Gemaris LLC. All Rights Reserved.</p>
     </div>
   </footer>
+  <!-- ==========================================
+       統一フッターセクション（ここまで）
+       ========================================== -->
 
-<script>
-  /* ==========================================================================
-     1. ハンバーガーメニュー制御
-     ========================================================================== */
-  const hamburger = document.getElementById('js-hamburger');
-  const navMenu = document.getElementById('js-nav-menu');
-
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('is-active');
-      navMenu.classList.toggle('is-active');
-    });
-
-    // メニュー内のリンクをクリックしたら自動で閉じる
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('is-active');
-        navMenu.classList.remove('is-active');
-      });
-    });
-  }
-
-  /* ==========================================================================
-     2. 画像マップ（<map> <area>）レスポンシブ自動調整処理
-     ========================================================================== */
-
-  /* --- A. Palmu特別キャンペーン (index-bonus.png) --- */
-  const palmuImg = document.getElementById('js-index-palmu-img');
-  const palmuAreas = document.querySelectorAll('map[name="index-palmu-map"] area');
-  const palmuOriginalWidth = 1125;
-  const palmuOriginalHeight = 2436;
-  const palmuOriginalCoords = [
-    [120, 1350, 1005, 1470], /* キャンペーン詳細を見る */
-    [120, 2045, 1005, 2165], /* プレミア特典を見る */
-    [155, 2290, 970, 2400]   /* お問い合わせはこちら */
-  ];
-
-  function resizePalmuMap() {
-    if (!palmuImg || palmuAreas.length === 0) return;
-    const rect = palmuImg.getBoundingClientRect();
-    const ratioX = rect.width / palmuOriginalWidth;
-    const ratioY = rect.height / palmuOriginalHeight;
-    palmuAreas.forEach((area, index) => {
-      const base = palmuOriginalCoords[index];
-      if (!base) return;
-      const newCoords = [
-        Math.round(base[0] * ratioX),
-        Math.round(base[1] * ratioY),
-        Math.round(base[2] * ratioX),
-        Math.round(base[3] * ratioY)
-      ];
-      area.setAttribute('coords', newCoords.join(','));
-    });
-  }
-
-  /* --- B. サポート＆プラン (index-support.png) --- */
-  const combImg = document.getElementById('js-index-comb-img');
-  const combAreas = document.querySelectorAll('map[name="index-comb-map"] area');
-  const combOriginalWidth = 1125;
-  const combOriginalHeight = 2436;
-  const combOriginalCoords = [
-    [90, 1240, 1035, 1360], /* サポート詳細 */
-    [90, 2280, 1035, 2400]  /* プラン詳細 */
-  ];
-
-  function resizeCombMap() {
-    if (!combImg || combAreas.length === 0) return;
-    const rect = combImg.getBoundingClientRect();
-    const ratioX = rect.width / combOriginalWidth;
-    const ratioY = rect.height / combOriginalHeight;
-    combAreas.forEach((area, index) => {
-      const base = combOriginalCoords[index];
-      if (!base) return;
-      const newCoords = [
-        Math.round(base[0] * ratioX),
-        Math.round(base[1] * ratioY),
-        Math.round(base[2] * ratioX),
-        Math.round(base[3] * ratioY)
-      ];
-      area.setAttribute('coords', newCoords.join(','));
-    });
-  }
-
-  /* --- C. リクルート (recruit.png) --- */
-  const indexImg = document.getElementById('js-index-recruit-img');
-  const indexArea = document.querySelector('map[name="index-recruit-map"] area');
-  const idxOriginalWidth = 1125;
-  const idxOriginalHeight = 2436;
-  const idxOriginalCoords = [145, 2170, 980, 2330];
-
-  function resizeIndexMap() {
-    if (!indexImg || !indexArea) return;
-    const rect = indexImg.getBoundingClientRect();
-    const ratioX = rect.width / idxOriginalWidth;
-    const ratioY = rect.height / idxOriginalHeight;
-    const newCoords = [
-      Math.round(idxOriginalCoords[0] * ratioX),
-      Math.round(idxOriginalCoords[1] * ratioY),
-      Math.round(idxOriginalCoords[2] * ratioX),
-      Math.round(idxOriginalCoords[3] * ratioY)
-    ];
-    indexArea.setAttribute('coords', newCoords.join(','));
-  }
-
-  /* --- D. スタッフ紹介 (staff.png) --- */
-  const staffImg = document.getElementById('js-index-staff-img');
-  const staffArea = document.querySelector('map[name="index-staff-map"] area');
-  const stfOriginalWidth = 1125;
-  const stfOriginalHeight = 2436;
-  const stfOriginalCoords = [110, 2040, 1015, 2240];
-
-  function resizeStaffMap() {
-    if (!staffImg || !staffArea) return;
-    const rect = staffImg.getBoundingClientRect();
-    const ratioX = rect.width / stfOriginalWidth;
-    const ratioY = rect.height / stfOriginalHeight;
-    const newCoords = [
-      Math.round(stfOriginalCoords[0] * ratioX),
-      Math.round(stfOriginalCoords[1] * ratioY),
-      Math.round(stfOriginalCoords[2] * ratioX),
-      Math.round(stfOriginalCoords[3] * ratioY)
-    ];
-    staffArea.setAttribute('coords', newCoords.join(','));
-  }
-
-  /* --- E. 全マップ一括更新関数 --- */
-  function updateAllMaps() {
-    resizePalmuMap();
-    resizeCombMap();
-    resizeIndexMap();
-    resizeStaffMap();
-  }
-
-  /* イベントリスナー（読み込み時・リサイズ時） */
-  window.addEventListener('load', updateAllMaps);
-  window.addEventListener('resize', updateAllMaps);
-
-  /* 画像キャッシュ対策（すでに画像読み込み完了している場合の個別実行） */
-  if (palmuImg) { palmuImg.complete ? resizePalmuMap() : palmuImg.addEventListener('load', resizePalmuMap); }
-  if (combImg) { combImg.complete ? resizeCombMap() : combImg.addEventListener('load', resizeCombMap); }
-  if (indexImg) { indexImg.complete ? resizeIndexMap() : indexImg.addEventListener('load', resizeIndexMap); }
-  if (staffImg) { staffImg.complete ? resizeStaffMap() : staffImg.addEventListener('load', resizeStaffMap); }
-</script>
+  <script src="js/script.js"></script>
 </body>
 </html>
