@@ -1,837 +1,1107 @@
-/* ==========================================================================
-   VARIABLES & RESET
-   ========================================================================== */
+/* ==========================================
+   Base & V-Liver Aesthetic Fonts
+   ========================================== */
 :root {
-  --gem-red: #D6001C;
-  --gem-red-dark: #B50018;
-  --gem-black: #1F1A1A;
-  --gem-gray: #554D4D;
-  --gem-paper: #FCFAF6;
-  --gem-paper-light: #FDFCF9;
-  --gem-border: #E5DDD1;
-  --discord: #5865F2;
-  --shadow: 0 15px 45px rgba(215, 201, 182, 0.25);
+  --primary-color: #ff3b75;
+  --primary-light: #ff75a0;
+  --secondary-color: #1a192b;
+  --accent-color: #00f0ff;
+  --yellow-accent: #ffe600;
+  --line-color: #06c755;
+  --bg-light: #f5f6fa;
+  --text-color: #e0e0e0;
+  --text-white: #ffffff;
+  /* Vライバー風ポップ丸ゴシック ＋ モダンフォントスタック */
+  --font-family: system-ui, -apple-system, "BlinkMacSystemFont", "Segoe UI", 
+                 "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", 
+                 'M PLUS Rounded 1c', 'Zen Maru Gothic', sans-serif;
+  --header-height: 70px;
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  font-family: "Times New Roman", "Noto Serif JP", "Hiragino Mincho ProN", "Hiragino Sans", serif;
-  color: var(--gem-black);
-  line-height: 2.0;
-  letter-spacing: 0.05em;
-  background: 
-    radial-gradient(circle at 10% 20%, rgba(243, 237, 226, 0.45), transparent 80%),
-    radial-gradient(circle at 90% 80%, rgba(229, 216, 193, 0.35), transparent 80%),
-    var(--gem-paper);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: #0d0d1a;
+  line-height: 1.6;
+  padding-top: var(--header-height);
+  overflow-x: hidden;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
   max-width: 100%;
-  display: block;
+  height: auto;
+  vertical-align: bottom;
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
-/* ==========================================================================
-   LAYOUT & COMMON
-   ========================================================================== */
+ul {
+  list-style: none;
+}
+
 .container {
   width: 100%;
-  max-width: 1200px;
-  margin: auto;
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
 .section {
-  padding: 120px 0;
-}
-
-h1 {
-  font-size: 3.5rem;
-  line-height: 1.5;
-  margin-bottom: 25px;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 2.4rem;
-  text-align: center;
-  margin-bottom: 20px;
+  padding: 70px 0;
   position: relative;
-  font-weight: 600;
+  z-index: 2;
 }
 
-h2::after {
-  content: "";
-  width: 60px;
-  height: 2px;
-  background: var(--gem-red);
-  display: block;
-  margin: 18px auto 0;
-  border-radius: 999px;
+.text-center { text-align: center; }
+.mt-lg { margin-top: 35px; }
+
+/* 見出しフォント設定 ＋ 基本の影 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
-h3 {
-  margin-bottom: 15px;
-  font-weight: 600;
+/* ==========================================
+   Sparkle Background Animation
+   ========================================== */
+.sparkles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
 }
 
-p {
-  margin-bottom: 18px;
+.sparkle {
+  position: absolute;
+  background: radial-gradient(circle, #fff 10%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle-fade 3s infinite ease-in-out;
 }
 
-.section-lead {
-  max-width: 800px;
-  margin: 0 auto 60px;
+@keyframes sparkle-fade {
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+/* ==========================================
+   Typography & Color Accents
+   ========================================== */
+.highlight-pink {
+  color: var(--primary-color);
+  background: linear-gradient(transparent 60%, #ffc0d3 60%);
+}
+
+.highlight-gold {
+  color: #fff275;
+  text-shadow: 0 0 10px rgba(255, 230, 0, 0.8);
+}
+
+.text-yellow {
+  color: var(--yellow-accent);
+}
+
+.text-pink {
+  color: var(--primary-color);
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.2em;
+}
+
+.text-pop {
+  letter-spacing: 1px;
+}
+
+/* ==========================================
+   Buttons & Hover Animations
+   ========================================== */
+.btn {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 900;
   text-align: center;
-  color: var(--gem-gray);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 59, 117, 0.25);
   font-size: 1.05rem;
 }
 
-ul {
-  padding-left: 20px;
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary-color), #ff528e);
+  color: var(--text-white);
+  border: none;
 }
 
-li {
-  margin-bottom: 10px;
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-white);
+  width: 100%;
 }
 
-/* ==========================================================================
-   HEADER & NAVIGATION
-   ========================================================================== */
+.btn-accent {
+  background: linear-gradient(45deg, #00d2ff, var(--accent-color));
+  color: var(--secondary-color);
+  width: 100%;
+}
+
+.btn-outline {
+  border: 3px solid var(--primary-color);
+  color: var(--primary-color);
+  background: #fff;
+}
+
+.btn-outline-white {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+  width: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(255, 59, 117, 0.4);
+}
+
+.pulse-anim {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 59, 117, 0.6); }
+  70% { transform: scale(1.03); box-shadow: 0 0 0 14px rgba(255, 59, 117, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 59, 117, 0); }
+}
+
+.bounce-anim {
+  animation: soft-bounce 2.5s infinite;
+}
+
+@keyframes soft-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+.float-anim {
+  animation: float-slow 4s ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.pulse-soft {
+  animation: pulse-soft-key 3s ease-in-out infinite;
+}
+
+@keyframes pulse-soft-key {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.text-white { color: #fff; }
+
+.section-lead {
+  text-align: center;
+  font-size: 1rem;
+  color: #b0b0c0;
+  margin-bottom: 45px;
+}
+
+/* ==========================================
+   Header Section (すりガラス固定仕様)
+   ========================================== */
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 9999;
-  background: rgba(252, 250, 246, 0.95);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(229, 221, 209, 0.6);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(26, 26, 26, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-clip: padding-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 0;
+}
+
+.header .container.header-inner {
+  background-color: transparent !important;
+}
+
+.header .nav-link {
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.header .hamburger span {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .header-inner {
-  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 }
 
 .logo {
-  height: 50px;
+  max-height: 42px;
+  width: auto;
+  transition: transform 0.3s ease;
 }
 
-.nav-menu {
-  display: flex;
-  gap: 24px;
-  align-items: center;
+.logo:hover {
+  transform: rotate(-3deg) scale(1.05);
 }
 
-.nav-menu a {
-  color: var(--gem-black);
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: .3s;
-}
-
-.nav-menu a:hover {
-  color: var(--gem-red);
-}
-
-.apply-btn {
-  background: var(--gem-red);
-  color: white !important;
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
+/* Hamburger Menu */
 .hamburger {
-  display: none;
-}
-
-/* ==========================================================================
-   BUTTONS
-   ========================================================================== */
-.button {
-  display: inline-block;
-  padding: 16px 36px;
-  border-radius: 6px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  transition: .3s ease;
-}
-
-.apply-button {
-  background: var(--gem-red);
-  color: white;
-  box-shadow: 0 8px 25px rgba(214, 0, 28, 0.2);
-}
-
-.apply-button:hover {
-  background: var(--gem-red-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(214, 0, 28, 0.3);
-}
-
-.discord-button {
-  background: var(--discord);
-  color: white;
-}
-
-.discord-button:hover {
-  transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   HERO SECTION
-   ========================================================================== */
-.hero {
-  min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  padding-top: 120px;
-}
-
-.hero-logo-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 900px;
-  max-width: 90vw;
-  transform: translate(-50%,-50%);
-  opacity: .03;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 10;
-}
-
-.hero-logo {
-  height: 200px;
-  margin: auto;
-  margin-bottom: 30px;
-}
-
-.hero-category {
-  color: var(--gem-red-dark);
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.hero-category::before,
-.hero-category::after {
-  content: "";
+  flex-direction: column;
+  justify-content: space-between;
   width: 30px;
-  height: 1px;
-  background: var(--gem-border);
-  display: inline-block;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
 }
 
-.hero h1 {
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  font-weight: 600;
-  color: var(--gem-black);
-  line-height: 1.6;
-}
-
-.hero-text {
-  max-width: 700px;
-  margin: auto;
-}
-
-.hero-buttons {
-  margin-top: 45px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-/* ==========================================================================
-   CARDS & GRIDS
-   ========================================================================== */
-.concept-card,
-.origin-card,
-.support-card,
-.plan-card,
-.manual-card,
-.company-link-card,
-.business-card {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(229, 221, 209, 0.6);
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: var(--shadow);
-  transition: .3s ease;
-  color: var(--gem-black) !important;
-}
-
-.concept-card:hover,
-.origin-card:hover,
-.support-card:hover,
-.plan-card:hover,
-.manual-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(215, 201, 182, 0.35);
-}
-
-.concept-card p, .origin-card p, .support-card p, .plan-card p, .manual-card p, .company-link-card p, .business-card p,
-.concept-card li, .origin-card li, .support-card li, .plan-card li, .manual-card li {
-  color: var(--gem-gray) !important;
-  opacity: 1 !important;
-}
-
-.concept-grid, .support-grid, .manual-grid, .business-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.plan-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-.origin-message {
-  margin-top: 60px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(229, 221, 209, 0.6);
-  border-radius: 16px;
-  padding: 50px;
-  text-align: center;
-  box-shadow: var(--shadow);
-  color: var(--gem-black) !important;
-}
-
-/* ==========================================================================
-   🛠️ STAFF TEASER SECTION (イラストはみ出し完全修正版)
-   ========================================================================== */
-.company-link-card {
-  background: #ffffff !important;
-  border: 1px solid #E5DDD1 !important;
-  border-radius: 24px !important;
-  padding: 50px 40px !important;
-  box-shadow: 0 20px 50px rgba(215, 201, 182, 0.2) !important;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.staff-teaser-img {
-  display: block;
+.hamburger span {
   width: 100%;
+  height: 4px;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Navigation Drawer */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 82%;
   max-width: 320px;
-  height: auto;
-  margin: 30px auto;
+  height: 100vh;
+  background: #fff;
+  padding: 90px 25px 30px;
+  box-shadow: -10px 0 25px rgba(0,0,0,0.15);
+  transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 999;
 }
 
-/* ==========================================================================
-   🛠️ EQUIPMENT & SUPPORT ITEM GRID (配信活動サポート)
-   ========================================================================== */
-.support-item-grid {
+.nav-menu.is-active { right: 0; }
+
+.nav-list {
   display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
+  flex-direction: column;
+  gap: 22px;
 }
 
-.support-item-card {
-  flex: 1;
-  min-width: 250px;
-  max-width: 300px;
+.nav-link {
+  font-weight: 800;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.btn-nav-cta {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px;
+  border-radius: 30px;
   text-align: center;
 }
 
-.support-item-imgbox {
+/* ==========================================
+   TOP Section
+   ========================================== */
+.hero-section {
+  position: relative;
   width: 100%;
-  aspect-ratio: 1/1;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
   overflow: hidden;
-  border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(215, 201, 182, 0.2);
-  margin-bottom: 15px;
+  background: linear-gradient(135deg, #0f0c20 0%, #1a1333 100%);
 }
 
-.support-item-imgbox img {
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.support-item-card h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1F1A1A;
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  color: var(--text-white);
+  padding: 50px 0;
 }
 
-/* ==========================================================================
-   🛠️ EXPENSE SUBSIDY GRID (経費補助制度)
-   ========================================================================== */
-.expense-grid {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.expense-card-item {
-  flex: 1;
-  min-width: 220px;
-  max-width: 260px;
-  background: #ffffff;
-  border: 1px solid #E5DDD1;
-  padding: 40px 20px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 15px 45px rgba(215, 201, 182, 0.25);
-}
-
-.expense-icon {
-  font-size: 2.5rem;
+.hero-subtext {
+  font-size: 1.25rem;
   margin-bottom: 15px;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
 }
 
-.expense-card-item h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1F1A1A;
-  margin: 0;
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.35;
+  margin-bottom: 35px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.9);
 }
 
-/* ==========================================================================
-   🛠️ FAQ SECTION
-   ========================================================================== */
-.faq-iris {
+/* ==========================================
+   Palmu Section
+   ========================================== */
+.palmu-logo-wrapper {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
 }
 
-.faq-iris-img {
-  max-width: 200px;
-  margin: 0 auto;
+.palmu-logo {
+  max-width: 220px;
+  opacity: 0.95;
 }
 
-.faq-list-wrapper {
+.palmu-cards {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
-.faq-item {
-  background: #ffffff;
-  border: 1px solid #E5DDD1;
-  border-left: 5px solid #E50914;
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 10px 30px rgba(215, 201, 182, 0.15);
-  text-align: left;
-}
-
-.faq-item h3 {
-  margin: 0 0 15px 0;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #1F1A1A;
-}
-
-.faq-item p {
-  margin: 0;
-  padding-left: 24px;
-  color: #554D4D;
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
-/* ==========================================================================
-   🛠️ RECRUIT TEASER SECTION (スマホパツパツ解消版)
-   ========================================================================== */
-.recruit-teaser-section {
-  padding: 80px 0;
-  background: #fdfbf7;
-}
-
-.recruit-teaser-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.recruit-teaser-card {
-  background: #ffffff;
-  border: 1px solid #E5DDD1;
-  border-radius: 24px;
-  padding: 50px 40px;
-  box-shadow: 0 20px 50px rgba(215, 201, 182, 0.2);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  text-align: left;
-}
-
-.recruit-teaser-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.recruit-teaser-image {
-  flex: 1;
-  min-width: 300px;
-  text-align: center;
-}
-
-.recruit-teaser-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
-.recruit-teaser-badge {
-  background: #E50914;
-  color: #fff;
-  padding: 6px 14px;
-  font-size: 0.8rem;
-  font-weight: 700;
-  border-radius: 50px;
-  display: inline-block;
-  margin-bottom: 15px;
-}
-
-.recruit-teaser-text h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #1F1A1A;
-  margin: 0 0 20px 0;
-  line-height: 1.4;
-}
-
-.recruit-teaser-desc {
-  color: #554D4D;
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
-
-.recruit-teaser-btn {
-  display: inline-block;
-  padding: 15px 40px;
-  background: #1F1A1A;
-  color: #fff;
-  border-radius: 50px;
-  font-weight: 700;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* ==========================================================================
-   🛠️ STORY / INTERVIEW SECTION (ボタン感・リッチ誘導版)
-   ========================================================================== */
-.story-section {
-  background: #fdfbf7;
-}
-
-.story-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.story-card {
-  display: block;
-  background: #ffffff;
-  border: 1px solid #E5DDD1;
-  border-radius: 16px;
-  padding: 40px 30px;
-  box-shadow: 0 10px 30px rgba(215, 201, 182, 0.15);
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.story-card-inner {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 180px;
-}
-
-.story-tag {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  color: #554D4D;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
-
-.story-card h3 {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #1F1A1A;
-  line-height: 1.5;
-  margin-bottom: 15px;
-  transition: color 0.3s ease;
-}
-
-.story-card p {
-  font-size: 0.95rem;
-  color: #554D4D;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.story-more {
-  margin-top: auto;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #1F1A1A;
-  display: inline-flex;
-  align-items: center;
-}
-
-.story-more::after {
-  content: "→";
-  margin-left: 8px;
+.image-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
   transition: transform 0.3s ease;
 }
 
-.story-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(215, 201, 182, 0.4);
-  border-color: #1F1A1A;
+.card-bg-img {
+  width: 100%;
+  display: block;
+  opacity: 0.88;
+  transition: transform 0.5s ease;
 }
 
-.story-card:hover h3 {
-  color: #E50914;
+.hover-zoom:hover .card-bg-img {
+  transform: scale(1.06);
 }
 
-.story-card:hover .story-more::after {
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-text {
+  color: var(--text-white);
+  font-size: 1.4rem;
+  font-weight: 900;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+
+/* ==========================================
+   Plan Section (枠線を消してシームレス化)
+   ========================================== */
+.plan-section {
+  background-color: var(--bg-light);
+  color: #2b2b36;
+}
+
+.plan-section .section-lead {
+  color: #666;
+}
+
+.plan-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-bottom: 45px;
+}
+
+.plan-card {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 20px 0 !important;
+  box-shadow: none !important;
+  position: relative;
+  border: none !important;
+}
+
+.hover-up:hover {
+  transform: translateY(-4px);
+}
+
+.plan-badge {
+  display: inline-block;
+  background: #555;
+  color: #fff;
+  font-size: 0.85rem;
+  padding: 4px 14px;
+  border-radius: 30px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.plan-badge.primary {
+  background: linear-gradient(45deg, var(--primary-color), #ff528e);
+}
+
+.plan-name {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 900;
+  color: #2b2b36;
+}
+
+.plan-return {
+  text-align: center;
+  background: #fff0f5;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.return-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--primary-color);
+  font-weight: 800;
+}
+
+.return-val {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  display: inline-block;
+}
+
+.plan-sub {
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #2b2b36;
+}
+
+.plan-desc {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* フルサポート契約などのサポート特典カードコンテナ */
+.support-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.feature-item {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-item:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.feature-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background: rgba(255, 59, 117, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  letter-spacing: 0.05em;
+}
+
+.feature-text {
+  font-size: 0.825rem;
+  line-height: 1.45;
+  color: #444;
+  margin: 0;
+}
+
+.feature-text strong {
+  color: #111;
+  font-weight: 700;
+}
+
+.video-container {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.video-container video {
+  width: 100%;
+  display: block;
+}
+
+.simulation-banner {
+  background: #fff;
+  border: 3px dashed var(--accent-color);
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  color: #2b2b36;
+}
+
+.sim-title {
+  font-weight: 900;
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+}
+
+/* ==========================================
+   Campaign Section (枠線を消してシームレス化)
+   ========================================== */
+.campaign-section {
+  background: linear-gradient(135deg, #181528 0%, #090710 100%);
+  color: #fff;
+}
+
+.campaign-header .sub-heading {
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  font-weight: 900;
+  display: block;
+  text-align: center;
+}
+
+.campaign-lead {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
+
+.campaign-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.campaign-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 20px 0 !important;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.campaign-tag {
+  background: rgba(255,255,255,0.15);
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.campaign-tag.highlight {
+  background: var(--primary-color);
+}
+
+.campaign-title {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 900;
+}
+
+.campaign-highlight-text {
+  color: var(--accent-color);
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.campaign-desc {
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.campaign-desc strong {
+  font-size: 1.3rem;
+}
+
+/* ==========================================
+   Interview Section
+   ========================================== */
+.interview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.story-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.story-img-wrapper {
+  position: relative;
+  min-height: 400px;
+}
+
+.story-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.85;
+}
+
+.story-overlay {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(to top, rgba(12, 10, 24, 0.95) 0%, rgba(12, 10, 24, 0.2) 100%);
+  padding: 35px 22px 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+}
+
+.story-num {
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: var(--accent-color);
+  font-weight: 900;
+}
+
+.story-title {
+  font-size: 1.4rem;
+  margin: 6px 0 12px;
+  line-height: 1.35;
+  font-weight: 900;
+}
+
+.story-desc {
+  font-size: 0.88rem;
+  opacity: 0.9;
+  margin-bottom: 18px;
+}
+
+.btn-text {
+  color: var(--accent-color);
+  font-weight: 900;
+  font-size: 1rem;
+  align-self: flex-start;
+  transition: transform 0.2s ease;
+}
+
+.btn-text:hover {
   transform: translateX(6px);
 }
 
-.story-cta-card {
-  border: 2px dashed #E50914;
-  background: rgba(229, 9, 20, 0.02);
-}
-
-.story-cta-card h3 { color: #E50914; }
-.story-cta-card .cta-tag {
-  color: #E50914;
-  background: rgba(229, 9, 20, 0.1);
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-.story-cta-card .story-more { color: #E50914; }
-
-/* ==========================================================================
-   🛠️ CTA SECTION (隙間＆等幅スマホ最適化)
-   ========================================================================== */
+/* ==========================================
+   応募フォーム誘導 Section (透かしイラスト付き)
+   ========================================== */
 .cta-section {
-  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #0b0b18;
   padding: 80px 0;
+  z-index: 1;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/Index-recruit.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  mix-blend-mode: luminosity;
+  z-index: -1;
+}
+
+.cta-section .cta-title {
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.cta-section .cta-desc {
+  color: #e0e0e0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.cta-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-title {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+.cta-desc {
+  font-size: 0.95rem;
+  margin-bottom: 35px;
 }
 
 .cta-buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 40px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 18px;
 }
 
-.cta-section .apply-button {
-  display: inline-block;
-  padding: 16px 40px;
-  background: #E50914;
+.btn-apply, .btn-line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  border-radius: 16px;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.btn-apply {
+  background: linear-gradient(45deg, var(--primary-color), #ff528e);
+}
+
+.btn-line {
+  background: linear-gradient(45deg, #06c755, #00e65c);
+}
+
+.btn-sub {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.btn-main {
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+/* ==========================================
+   統一フッターセクション用スタイル
+   ========================================== */
+.footer {
+  background-color: #1a1a1a;
   color: #ffffff;
-  border-radius: 8px;
-  font-weight: 700;
-  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.2);
-  min-width: 200px;
+  padding: 40px 0 20px;
   text-align: center;
 }
 
-/* ==========================================================================
-   DISCORD & FOOTER
-   ========================================================================== */
-.discord-section { text-align: center; }
-
-/* 🚨 padding の最初の数値を 6px から 60px に大幅アップ！ */
-.footer { 
-  padding: 60px 0 20px 0 !important; 
-  background: var(--gem-paper-light); 
-  border-top: 1px solid var(--gem-border); 
-  text-align: center; 
-}
-
-.footer-logo img { height: 40px; margin: 0 auto 20px; }
-.footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
-.footer-links a { color: var(--gem-black); font-size: 0.9rem; }
-.copyright { margin-top: 20px; font-size: 0.8rem; color: var(--gem-gray); }/* ==========================================================================
-   📱 RESPONSIVE (スマホ対応・メディアクエリ)
-   ========================================================================== */
-@media screen and (max-width: 768px) {
-  .section { padding: 80px 0; }
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.8rem; }
-
-  .concept-grid, .support-grid, .manual-grid, .business-grid, .plan-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px;
-  }
-
-  /* 💡 ハンバーガーメニュー周りの不具合完全撲滅指定 */
-  .hamburger {
-    display: block !important;
-    width: 30px;
-    height: 25px;
-    position: relative;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 10000;
-  }
-  
-  .hamburger span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #1F1A1A;
-    position: absolute;
-    transition: all 0.3s ease;
-  }
-  
-  .hamburger span:nth-child(1) { top: 0; }
-  .hamburger span:nth-child(2) { top: 11px; }
-  .hamburger span:nth-child(3) { bottom: 0; }
-
-  /* 💡 ボタン押下時に三本線を「✕」に変形 */
-  .hamburger.is-active span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
-  .hamburger.is-active span:nth-child(2) { opacity: 0; }
-  .hamburger.is-active span:nth-child(3) { transform: translateY(-12px) rotate(-45deg); }
-
-  /* 💡 display: none から !important を排除してJSでの展開を許可 */
-  .nav-menu {
-    display: none; 
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: rgba(252, 250, 246, 0.98);
-    flex-direction: column;
-    padding: 30px;
-    gap: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    border-bottom: 1px solid rgba(229, 221, 209, 0.6);
-    z-index: 9999;
-  }
-  
-  /* 開いた時は!important付きで強制表示 */
-  .nav-menu.is-active {
-    display: flex !important;
-  }
-  
-  .apply-btn { width: 100%; text-align: center; }
-
-  /* スタッフカードスマホ余白 */
-  .company-link-card { padding: 30px 20px !important; margin: 30px 15px 0 !important; }
-  .staff-teaser-img { max-width: 240px; }
-
-  /* 募集 teaser スマホ最適化 */
-  .recruit-teaser-section { padding: 50px 0; }
-  .recruit-teaser-card { padding: 30px 20px; gap: 25px; }
-  .recruit-teaser-text, .recruit-teaser-image { min-width: 100%; }
-  .recruit-teaser-text h3 { font-size: 1.35rem; }
-  .recruit-teaser-desc { font-size: 0.95rem; }
-  .recruit-teaser-btn-wrap { text-align: center; }
-  .recruit-teaser-btn { width: 100%; max-width: 280px; }
-
-  /* STORYカードスマホ最適化 */
-  .story-grid { gap: 20px; }
-  .story-card { padding: 30px 24px; }
-  .story-card-inner { min-height: 140px; }
-  .story-card h3 { font-size: 1.25rem; }
-
-  /* CTA縦並び＆等幅 */
-  .cta-buttons { flex-direction: column; gap: 15px; padding: 0 20px; }
-  .cta-section .apply-button { width: 100%; max-width: 300px; margin: 0 auto; }
-}
-/* ==========================================
-   🏁 フッターセクションのレスポンシブ改善CSS
-   ========================================== */
-
-/* 1. リンク全体のエリア設定 */
 .footer-links {
   display: flex;
-  flex-wrap: wrap;       /* スマホで綺麗に折り返すように設定 */
   justify-content: center;
-  gap: 8px 16px;         /* ★横の隙間は16px、縦の行間（gap）は8pxと超コンパクトに凝縮！ */
-  margin-top: 20px;
-  margin-bottom: 25px;   /* 仕切り線までの余白 */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+  margin-bottom: 20px;
 }
 
-/* 2. 各ハイパーリンク自体の調整 */
 .footer-links a {
-  display: inline-block;
-  line-height: 1.2;      /* ★行の高さ自体を限界まで詰めて、1つの塊に見せるで */
-  font-size: 0.85rem;    /* スマホで見やすい上品なサイズ感 */
+  color: #ffffff;
   text-decoration: none;
-  color: #666666;        /* 高級感のあるシックなグレー（お好みで変えてな） */
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 
-/* 3. コピーライトとの間に「仕切り線」を爆誕させる */
-.copyright {
+.footer-links a:hover {
+  opacity: 0.7;
+  color: #ff69b4;
+}
+
+.footer-sub-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-sub-links a {
+  transition: opacity 0.3s ease;
+}
+
+.footer-sub-links a:hover {
+  opacity: 0.7;
+  text-decoration: underline !important;
+}
+
+.footer .copyright {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  margin-top: 20px;
+}
+
+/* ==========================================
+   Scroll Fade In Animation Classes
+   ========================================== */
+.js-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.js-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+
+/* ==========================================
+   黒背景セクションのタイトル視認性アップ（白グロー影）
+   ========================================== */
+.campaign-section h1,
+.campaign-section h2,
+.campaign-section h3,
+.cta-section h1,
+.cta-section h2,
+.cta-section h3 {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.campaign-section .campaign-title,
+.cta-section .cta-title {
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+/* 「思想」などのsection-titleを黒背景で光らせるための専用指定 */
+.section-title {
+  /* ...既存のスタイル... */
+  color: #ffffff;
+}
+
+/* 黒背景の中にあるsection-titleも白グローを適用 */
+.campaign-section .section-title,
+.cta-section .section-title {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* section-titleに下線を引いて視認性を爆上げする */
+.section-title {
   position: relative;
-  margin-top: 25px;      /* ★リンクエリアとの境界をガッツリ広げる（25px） */
-  padding-top: 20px;     /* ★仕切り線から文字までの余白（20px） */
-  font-size: 0.75rem;
-  color: #888888;
-  text-align: center;
+  padding-bottom: 15px; /* 下線の分だけ余白 */
 }
 
-/* ★超簡単！CSSだけでコピーライトの上にオシャレな仕切り線を引く魔法の記述 */
-.copyright::before {
-  content: "";
+.section-title::after {
+  content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;           /* ★線の長さ（画面いっぱいじゃなく、中央にちょこんと置くのが今風でラグジュアリーや） */
-  height: 1px;
-  background-color: #e0d5c1; /* Gemarisの世界観に合わせた上品なゴールド・ベージュ系の薄い線 */
-}
-/* 1. 見出し系だけは、不自然な1文字改行を防ぐためにキープ */
-h1, h2, h3, h4 {
-  word-break: keep-all;
-  overflow-wrap: break-word;
+  width: 60px; /* 下線の長さ */
+  height: 4px; /* 下線の太さ */
+  background: var(--primary-color); /* ピンクのライン */
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--primary-color); /* ライン自体も光らせる */
 }
 
-/* 2. 🚨戦犯：長文（p）や全体（body）は、絶対に突き抜けないように標準改行に戻す */
-body, p {
-  word-break: normal !important;      /* 横の突き抜けを緊急停止 */
-  overflow-wrap: break-word !important; /* 枠線に合わせて安全に自動改行 */
+/* ==========================================
+   Responsive (PC View)
+   ========================================== */
+@media (min-width: 768px) {
+  /* PCビューの時はバーガーメニューを非表示 */
+  .hamburger {
+    display: none !important;
+  }
+
+  /* ナビゲーションメニュー全体の強制リセット */
+  .nav-menu {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* リストを確実に横並びにする */
+  .nav-list {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 28px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  /* 各リストアイテムとリンクの縦書き・折り返しを完全に防ぐ */
+  .nav-list li,
+  .nav-list .nav-link {
+    writing-mode: horizontal-tb !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+
+  .btn-nav-cta { padding: 10px 22px; }
+
+  .hero-title { font-size: 3.5rem; }
+  .hero-subtext { font-size: 1.5rem; }
+
+  .palmu-cards,
+  .plan-grid,
+  .campaign-list,
+  .interview-list {
+    flex-direction: row;
+  }
+
+  .cta-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn-apply, .btn-line {
+    width: 320px;
+  }
+}
+
+/* スマホ表示時の微調整 */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 0 15px;
+  }
+
+  .footer-links {
+    gap: 12px 18px;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .support-features {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .feature-item {
+    padding: 10px 12px;
+  }
+}
+
+/* ==========================================
+   左からのスライドインアニメーション用スタイル
+   ========================================== */
+.js-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-slide-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
