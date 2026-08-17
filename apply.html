@@ -11,8 +11,8 @@
 <meta name="description"
 content="Gemaris所属ライバー応募フォーム">
 
-<link rel="stylesheet"
-href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/apply-card.css"> <!-- 💡 追加 -->
 
 <style>
   .apply-form {
@@ -84,13 +84,52 @@ href="css/style.css">
     height: auto;
   }
 </style>
-
+<style>
+  /* 応募ページ専用の強制白背景化・文字色修正 */
+  body, html {
+    background-color: #faf7f2 !important;
+    color: #2b2b2b !important;
+  }
+  section.section {
+    background-color: transparent !important;
+  }
+  .apply-form {
+    background-color: #ffffff !important;
+    color: #2b2b2b !important;
+  }
+  .apply-form label,
+  .apply-form span,
+  .apply-form p,
+  .form-group label,
+  .form-group span,
+  .form-group p {
+    color: #2b2b2b !important;
+    text-shadow: none !important;
+  }
+  .badge-required {
+    background-color: #9c2a2a !important;
+    color: #ffffff !important;
+  }
+  .badge-optional {
+    background-color: #666666 !important;
+    color: #ffffff !important;
+  }
+  .apply-form input[type="text"],
+  .apply-form input[type="file"],
+  .apply-form select,
+  .apply-form textarea {
+    background-color: #ffffff !important;
+    color: #2b2b2b !important;
+    border: 1px solid #cccccc !important;
+  }
+</style>
 </head>
 
 <body>
-<header class="header">
+  <!-- ヘッダー -->
+  <header class="header">
     <div class="container header-inner">
-      <a href="index.html">
+      <a href="index.html" class="logo-link">
         <img src="images/logo.png" alt="Gemaris Logo" class="logo">
       </a>
       <button class="hamburger" id="js-hamburger" aria-label="メニューを開く">
@@ -99,21 +138,44 @@ href="css/style.css">
         <span></span>
       </button>
       <nav class="nav-menu" id="js-nav-menu">
-        <a href="index.html">TOP</a>
-        <a href="index.html#plans">サポート・プラン</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#recruit-teaser">リクルート</a>
-        <a href="index.html#story-section">インタビュー</a>
-        <a href="index.html#staff-teaser">スタッフ</a>
-        <a href="apply.html" class="apply-btn">応募はこちら</a>
+        <ul class="nav-list">
+          <li><a href="#top" class="nav-link">TOP</a></li>
+          <li><a href="#palmu" class="nav-link">Palmu紹介</a></li>
+          <li><a href="#plan" class="nav-link">契約プラン</a></li>
+          <li><a href="#campaign" class="nav-link">キャンペーン</a></li>
+          <li><a href="#interview" class="nav-link">ライバーインタビュー</a></li>
+          <li><a href="#apply" class="nav-link btn-nav-cta pulse-anim">応募はこちら</a></li>
+        </ul>
       </nav>
     </div>
   </header>
-  <section class="page-hero section" style="padding: 40px 0 20px 0; background-color: #faf7f2;">
+<section class="page-hero section" style="padding: 40px 0 20px 0; background-color: #faf7f2;">
   <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 15px;">
-    <div class="apply-hero-image-box" style="width: 100%; max-width: 560px; margin: 0 auto;">
-      <img src="images/apply.png" alt="Gemaris 応募フォーム：Gemarisに興味を持っていただきありがとうございます。下記フォームよりご応募ください。確認後、担当者よりご連絡いたします。" style="width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 10px 30px rgba(215, 201, 182, 0.25);">
+    
+    <!-- 🎨 画像の代わりにCSSで完全に再現したカードボックス -->
+    <div class="apply-card-box">
+      <div class="apply-header-top">
+        <div class="apply-ornament-line"></div>
+        <div class="apply-ornament-diamond"></div>
+        <div class="apply-ornament-line"></div>
+      </div>
+
+      <h2 class="apply-card-title">応募フォーム</h2>
+
+      <div class="apply-center-divider">
+        <span></span>
+        <div class="apply-center-dot"></div>
+        <span></span>
+      </div>
+
+      <p class="apply-card-text">
+        Gemarisに興味を<br>持っていただき<br>
+        ありがとうございます。<br>
+        下記フォームより<br>ご応募ください。<br>
+        確認後、担当者より<br>ご連絡いたします。
+      </p>
     </div>
+
   </div>
 </section>
 
@@ -299,28 +361,11 @@ class="apply-form">
     <textarea name="message" rows="6"></textarea>
   </div>
 
-  <div class="form-group" style="text-align: center; margin-top: 40px; margin-bottom: 0;">
-    <button 
-      type="submit" 
-      style="
-        width: 100%;
-        max-width: 560px;
-        height: auto;
-        padding: 0;
-        border: none;
-        outline: none;
-        background: none;
-        cursor: pointer;
-        display: inline-block;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-      "
-      onmouseover="this.style.transform='scale(0.98)'; this.style.opacity='0.9';"
-      onmouseout="this.style.transform='scale(1)'; this.style.opacity='1';"
-    >
-      <img src="images/apply02.png" alt="応募する" style="width: 100%; height: auto; display: block;">
+<div class="form-group" style="text-align: center; margin-top: 40px; margin-bottom: 0;">
+    <button type="submit" class="apply-submit-btn">
+      <span class="apply-submit-text">応募する</span>
     </button>
   </div>
-
 </form>
 
 </div>
@@ -330,20 +375,20 @@ class="apply-form">
 <section class="section" style="padding: 30px 0 50px 0; background-color: #faf7f2;">
   <div class="container" style="max-width: 600px; margin: 0 auto; padding: 0 15px;">
     
-    <a href="https://discord.gg/xxxxx" target="_blank" class="discord-banner-link" style="
-      display: block;
-      max-width: 560px;
-      margin: 0 auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(215, 201, 182, 0.25);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      text-decoration: none;
-    "
-    onmouseover="this.style.transform='scale(0.98)';"
-    onmouseout="this.style.transform='scale(1)';"
-    >
-      <img src="images/apply03.png" alt="応募前の相談も歓迎です。応募するか迷っている方も、まずはお気軽にご相談ください。Discordで相談する" style="width: 100%; height: auto; display: block; border: none;">
+    <a href="https://lin.ee/PKv1zts" target="_blank" rel="noopener noreferrer" class="apply-consult-card">
+      <div class="apply-consult-text-box">
+        <p class="apply-consult-title">応募前の相談も<br>歓迎です。</p>
+        <p class="apply-consult-desc">
+          応募するか迷っている<br>方も、
+          まずはお気軽に<br>ご相談ください。
+        </p>
+      </div>
+      
+      <!-- ボタン部分を統一デザインに -->
+      <div class="btn btn-line bounce-anim" style="width: 100%; max-width: 320px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; border-radius: 12px; color: #fff; box-shadow: 0 4px 12px rgba(6, 199, 85, 0.3);">
+        <span class="btn-sub" style="font-size: 0.75rem; opacity: 0.9;">LINEで気軽に相談</span>
+        <span class="btn-main" style="font-size: 1.2rem; font-weight: 900;">公式LINE</span>
+      </div>
     </a>
 
   </div>
@@ -351,9 +396,6 @@ class="apply-form">
 
 <footer class="footer">
     <div class="container">
-      <div class="footer-logo">
-        <img src="images/image(24).png" alt="Gemaris">
-      </div>
       
       <div class="footer-links">
         <a href="index.html">TOP</a>
