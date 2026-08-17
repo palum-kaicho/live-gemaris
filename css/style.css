@@ -976,7 +976,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 「思想」などのsection-titleを黒背景で光らせるための専用指定 */
 .section-title {
-  /* ...既存のスタイル... */
   color: #ffffff;
 }
 
@@ -989,7 +988,7 @@ h1, h2, h3, h4, h5, h6 {
 /* section-titleに下線を引いて視認性を爆上げする */
 .section-title {
   position: relative;
-  padding-bottom: 15px; /* 下線の分だけ余白 */
+  padding-bottom: 15px;
 }
 
 .section-title::after {
@@ -998,23 +997,49 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px; /* 下線の長さ */
-  height: 4px; /* 下線の太さ */
-  background: var(--primary-color); /* ピンクのライン */
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color);
   border-radius: 2px;
-  box-shadow: 0 0 10px var(--primary-color); /* ライン自体も光らせる */
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* ==========================================
+   応募フォーム（.apply-card-box）の文字色・背景色固定
+   ========================================== */
+.apply-card-box,
+.apply-card-box label,
+.apply-card-box span,
+.apply-card-box p,
+.apply-card-box h1 {
+  color: #2b2b2b !important;
+  text-shadow: none !important;
+}
+
+/* 必須・任意のバッジや特定のラベルは文字色を白に保つ */
+.apply-card-box .badge-required,
+.apply-card-box .badge-optional,
+.apply-card-box .apply-label-apply {
+  color: #ffffff !important;
+}
+
+/* 入力欄（input, select, textarea）の中身は白背景＆黒文字に固定 */
+.apply-card-box input,
+.apply-card-box select,
+.apply-card-box textarea {
+  color: #2b2b2b !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cccccc !important;
 }
 
 /* ==========================================
    Responsive (PC View)
    ========================================== */
 @media (min-width: 768px) {
-  /* PCビューの時はバーガーメニューを非表示 */
   .hamburger {
     display: none !important;
   }
 
-  /* ナビゲーションメニュー全体の強制リセット */
   .nav-menu {
     position: static !important;
     width: auto !important;
@@ -1025,7 +1050,6 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: none !important;
   }
 
-  /* リストを確実に横並びにする */
   .nav-list {
     display: flex !important;
     flex-direction: row !important;
@@ -1036,7 +1060,6 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none !important;
   }
 
-  /* 各リストアイテムとリンクの縦書き・折り返しを完全に防ぐ */
   .nav-list li,
   .nav-list .nav-link {
     writing-mode: horizontal-tb !important;
